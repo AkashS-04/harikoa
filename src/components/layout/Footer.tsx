@@ -20,15 +20,7 @@ const footerLinks = {
     { name: 'Data Analytics', href: '/services/data-analytics' },
     { name: 'Cybersecurity', href: '/services/cybersecurity' },
   ],
-  sectors: [
-    { name: 'Healthcare', href: '/sectors/healthcare' },
-    { name: 'Finance', href: '/sectors/finance' },
-    { name: 'Manufacturing', href: '/sectors/manufacturing' },
-    { name: 'Retail', href: '/sectors/retail' },
-    { name: 'Education', href: '/sectors/education' },
-  ],
   company: [
-    { name: 'About Us', href: '/about' },
     { name: 'Careers', href: '/careers' },
     { name: 'Contact', href: '/contact' },
     { name: 'Blog', href: '/blog' },
@@ -58,7 +50,7 @@ export function Footer() {
     <footer className="bg-secondary-900 text-white">
       {/* Main Footer Content */}
       <div className="container-custom section-padding">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company Info */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center space-x-2 mb-6">
@@ -105,22 +97,6 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Sectors */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Sectors</h3>
-            <ul className="space-y-3">
-              {footerLinks.sectors.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-secondary-300 hover:text-primary-400 transition-colors duration-200"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
 
           {/* Company */}
           <div>

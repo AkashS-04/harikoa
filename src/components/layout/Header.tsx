@@ -20,18 +20,6 @@ const navigation = [
       { name: 'Cybersecurity', href: '/services/cybersecurity' },
     ]
   },
-  { 
-    name: 'Sectors', 
-    href: '/sectors',
-    children: [
-      { name: 'Healthcare', href: '/sectors/healthcare' },
-      { name: 'Finance', href: '/sectors/finance' },
-      { name: 'Manufacturing', href: '/sectors/manufacturing' },
-      { name: 'Retail', href: '/sectors/retail' },
-      { name: 'Education', href: '/sectors/education' },
-    ]
-  },
-  { name: 'About', href: '/about' },
   { name: 'Careers', href: '/careers' },
   { name: 'Contact', href: '/contact' },
 ]
