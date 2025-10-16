@@ -17,7 +17,7 @@ export function Welcome() {
   ]
 
   return (
-    <section ref={ref} className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-50 via-white to-accent-50 relative overflow-hidden">
+    <section ref={ref} className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-50 via-white to-accent-50 relative overflow-hidden pt-24 pb-16">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-primary-200 to-accent-200 rounded-full opacity-20 animate-pulse"></div>
@@ -30,14 +30,14 @@ export function Welcome() {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8 }}
-          className="max-w-5xl mx-auto text-center"
+          className="max-w-5xl mx-auto text-center px-4 sm:px-6 lg:px-8"
         >
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-bold text-secondary-900 mb-6"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-secondary-900 mb-8 sm:mb-12"
           >
             Empowering Your{' '}
             <span className="text-gradient">Financial Journey</span>
@@ -50,7 +50,7 @@ export function Welcome() {
             className="space-y-6 text-lg md:text-xl text-secondary-600 max-w-4xl mx-auto mb-12"
           >
             <p className="text-2xl md:text-3xl font-semibold text-secondary-800">
-              We&apos;re here to bring <span className="text-primary-600 underline decoration-primary-500 decoration-2">structure to your numbers</span>, <span className="text-primary-600 underline decoration-primary-500 decoration-2">strength to your strategy</span>, and <span className="text-primary-600 underline decoration-primary-500 decoration-2">peace of mind to your journey</span>— so you can build a business that&apos;s both fulfilling and joyful.
+              We&apos;re here to bring structure to your numbers, strength to your strategy, and peace of mind to your journey— so you can build a business that&apos;s both fulfilling and joyful.
             </p>
             
             <p className="text-lg text-secondary-600">
