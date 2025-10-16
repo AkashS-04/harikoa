@@ -37,8 +37,8 @@ export function CareersHero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-5xl md:text-6xl lg:text-7xl font-bold text-secondary-900 mb-6 text-balance"
           >
-            Build the Future of{' '}
-            <span className="text-gradient">Technology</span>
+            Join Our{' '}
+            <span className="text-gradient">Team</span>
           </motion.h1>
 
           {/* Subheading */}
@@ -48,8 +48,8 @@ export function CareersHero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl md:text-2xl text-secondary-600 mb-12 max-w-3xl mx-auto text-balance"
           >
-            Join a team of passionate innovators who are shaping the future of technology. 
-            We&apos;re looking for talented individuals who share our vision and values.
+            Join a team that blends financial precision with entrepreneurial energy. 
+            We believe in empowering our people to think strategically, act with integrity, and grow both personally and professionally.
           </motion.p>
 
           {/* Stats */}

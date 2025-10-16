@@ -9,25 +9,25 @@ const companyInfo = [
   {
     icon: Mail,
     title: 'Email',
-    value: 'hello@harikoa.com',
+    value: 'info@harikoa.com',
     description: 'General inquiries and support'
   },
   {
     icon: Phone,
     title: 'Phone',
-    value: '+1 (555) 123-4567',
+    value: '+91-XXXX-XXX-XXX',
     description: 'Direct line to our team'
   },
   {
     icon: MapPin,
     title: 'Address',
-    value: '123 Tech Street, San Francisco, CA 94105',
+    value: '(Add office address)',
     description: 'Visit our headquarters'
   },
   {
     icon: Clock,
     title: 'Business Hours',
-    value: 'Monday - Friday, 9:00 AM - 6:00 PM PST',
+    value: 'Monday-Friday, 9:00 AM–6:00 PM',
     description: 'We\'re here to help during business hours'
   }
 ]

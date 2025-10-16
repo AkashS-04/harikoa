@@ -34,8 +34,8 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-5xl md:text-6xl lg:text-7xl font-bold text-secondary-900 mb-6 text-balance"
           >
-            Transforming Ideas Into{' '}
-            <span className="text-gradient">Digital Reality</span>
+            Bringing Structure to Your{' '}
+            <span className="text-gradient">Numbers</span>
           </motion.h1>
 
           {/* Subheading */}
@@ -45,8 +45,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl md:text-2xl text-secondary-600 mb-8 max-w-3xl mx-auto text-balance"
           >
-            We empower businesses to thrive in the digital age through innovative 
-            technology solutions, cloud infrastructure, and cutting-edge software development.
+            Partner with HariKoa — personalized financial solutions that propel your success forward.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -57,13 +56,13 @@ export function Hero() {
             className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-12"
           >
             <Link href="/contact" className="btn-primary text-lg px-8 py-4 group">
-              Start Your Project
+              Explore Our Services
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
             </Link>
-            <button className="btn-ghost text-lg px-8 py-4 group">
+            <Link href="/services" className="btn-ghost text-lg px-8 py-4 group">
               <Play className="w-5 h-5 mr-2" />
-              Watch Our Story
-            </button>
+              Learn More
+            </Link>
           </motion.div>
 
           {/* Stats */}
@@ -74,20 +73,20 @@ export function Hero() {
             className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-2xl mx-auto"
           >
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary-600 mb-2">500+</div>
-              <div className="text-sm text-secondary-600">Projects Delivered</div>
+              <div className="text-3xl md:text-4xl font-bold text-primary-600 mb-2">70+</div>
+              <div className="text-sm text-secondary-600">Years Combined Experience</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary-600 mb-2">50+</div>
-              <div className="text-sm text-secondary-600">Happy Clients</div>
+              <div className="text-3xl md:text-4xl font-bold text-primary-600 mb-2">3</div>
+              <div className="text-sm text-secondary-600">Core Expertise Areas</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary-600 mb-2">5+</div>
-              <div className="text-sm text-secondary-600">Years Experience</div>
+              <div className="text-3xl md:text-4xl font-bold text-primary-600 mb-2">5</div>
+              <div className="text-sm text-secondary-600">Service Categories</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary-600 mb-2">99%</div>
-              <div className="text-sm text-secondary-600">Success Rate</div>
+              <div className="text-3xl md:text-4xl font-bold text-primary-600 mb-2">100%</div>
+              <div className="text-sm text-secondary-600">Client-Focused</div>
             </div>
           </motion.div>
         </div>

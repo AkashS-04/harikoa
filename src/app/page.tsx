@@ -1,19 +1,23 @@
-import { Hero } from '@/components/sections/Hero'
-import { Services } from '@/components/sections/Services'
-import { About } from '@/components/sections/About'
-import { Partners } from '@/components/sections/Partners'
-import { Stats } from '@/components/sections/Stats'
-import { CTA } from '@/components/sections/CTA'
+import { Welcome } from '@/components/sections/Welcome'
+import { AboutUs } from '@/components/sections/AboutUs'
+import { ServicesOverview } from '@/components/sections/ServicesOverview'
+import { WorkWithUs } from '@/components/sections/WorkWithUs'
+import { CTASection } from '@/components/sections/CTASection'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Home',
+  description: 'Bringing structure to your numbers, strength to your strategy, and peace of mind to your journey. Comprehensive financial services for growing businesses.',
+}
 
 export default function HomePage() {
   return (
     <>
-      <Hero />
-      <Stats />
-      <About />
-      <Services />
-      <Partners />
-      <CTA />
+      <Welcome />
+      <AboutUs />
+      <ServicesOverview />
+      <WorkWithUs />
+      <CTASection />
     </>
   )
 }

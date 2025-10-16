@@ -21,11 +21,10 @@ export function CTA() {
         >
           {/* Header */}
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-balance">
-            Ready to Transform Your Business?
+            Build a Business That&apos;s Fulfilling, Structured, and Scalable
           </h2>
           <p className="text-xl md:text-2xl text-white/90 mb-12 text-balance">
-            Let&apos;s discuss how our innovative technology solutions can accelerate 
-            your digital transformation and drive measurable results.
+            Let&apos;s start your journey with HariKoa today.
           </p>
 
           {/* CTA Buttons */}
@@ -34,14 +33,8 @@ export function CTA() {
               href="/contact" 
               className="bg-white text-primary-600 hover:bg-white/90 text-lg px-8 py-4 rounded-lg font-semibold transition-all duration-200 shadow-lg hover:shadow-xl group"
             >
-              Start Your Project
+              Contact Us
               <ArrowRight className="w-5 h-5 ml-2 inline group-hover:translate-x-1 transition-transform duration-200" />
-            </Link>
-            <Link 
-              href="/contact" 
-              className="border-2 border-white text-white hover:bg-white hover:text-primary-600 text-lg px-8 py-4 rounded-lg font-semibold transition-all duration-200"
-            >
-              Schedule Consultation
             </Link>
           </div>
 

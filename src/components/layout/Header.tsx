@@ -13,11 +13,11 @@ const navigation = [
     name: 'Services', 
     href: '/services',
     children: [
-      { name: 'Digital Transformation', href: '/services/digital-transformation' },
-      { name: 'Cloud Solutions', href: '/services/cloud-solutions' },
-      { name: 'AI & Machine Learning', href: '/services/ai-ml' },
-      { name: 'Data Analytics', href: '/services/data-analytics' },
-      { name: 'Cybersecurity', href: '/services/cybersecurity' },
+      { name: 'Finance Operations', href: '/services/finance-operations' },
+      { name: 'Revenue Operations', href: '/services/revenue-operations' },
+      { name: 'Startup CFO Services', href: '/services/startup-cfo' },
+      { name: 'Legal Services', href: '/services/legal-services' },
+      { name: 'Company Secretarial', href: '/services/company-secretarial' },
     ]
   },
   { name: 'Careers', href: '/careers' },
@@ -111,12 +111,6 @@ export function Header() {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden lg:flex items-center space-x-4">
-            <Link href="/contact" className="btn-primary">
-              Get Started
-            </Link>
-          </div>
 
           {/* Mobile menu button */}
           <button
@@ -187,11 +181,6 @@ export function Header() {
                     )}
                   </div>
                 ))}
-                <div className="pt-4 px-4">
-                  <Link href="/contact" className="btn-primary w-full">
-                    Get Started
-                  </Link>
-                </div>
               </div>
             </motion.div>
           )}

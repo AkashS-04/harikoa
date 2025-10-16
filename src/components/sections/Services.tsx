@@ -16,51 +16,43 @@ import {
 
 const services = [
   {
-    icon: Cloud,
-    title: 'Cloud Solutions',
-    description: 'Scalable, secure, and cost-effective cloud infrastructure that grows with your business.',
-    features: ['AWS/Azure/GCP', 'Migration Services', 'Cost Optimization', '24/7 Support'],
-    href: '/services/cloud-solutions',
-    color: 'from-blue-500 to-cyan-500'
-  },
-  {
-    icon: Brain,
-    title: 'AI & Machine Learning',
-    description: 'Intelligent solutions that automate processes and provide valuable insights from your data.',
-    features: ['Predictive Analytics', 'Natural Language Processing', 'Computer Vision', 'Custom AI Models'],
-    href: '/services/ai-ml',
-    color: 'from-purple-500 to-pink-500'
-  },
-  {
     icon: Database,
-    title: 'Data Analytics',
-    description: 'Transform raw data into actionable insights that drive informed business decisions.',
-    features: ['Data Visualization', 'Real-time Dashboards', 'Predictive Modeling', 'Data Governance'],
-    href: '/services/data-analytics',
+    title: 'Finance Operations',
+    description: 'Making your numbers make sense, every single time.',
+    features: ['Accounting Setup, Bookkeeping & Reconciliation', 'Payroll Structuring and Execution', 'GST, TDS, PF/ESIC Filing and Compliance', 'Month-end Close, MIS & Audit Coordination'],
+    href: '/services/finance-operations',
     color: 'from-green-500 to-emerald-500'
   },
   {
+    icon: Brain,
+    title: 'Revenue Operations',
+    description: 'Bringing visibility, rhythm, and results to your sales process.',
+    features: ['Sales Compensation & Incentive Policy Design', 'Performance Analytics & Forecasting', 'Pipeline Management, Billing, and Collections', 'Pricing and Profitability Optimization'],
+    href: '/services/revenue-operations',
+    color: 'from-blue-500 to-cyan-500'
+  },
+  {
     icon: Shield,
-    title: 'Cybersecurity',
-    description: 'Comprehensive security solutions to protect your digital assets and ensure compliance.',
-    features: ['Security Audits', 'Penetration Testing', 'Compliance Management', 'Incident Response'],
-    href: '/services/cybersecurity',
-    color: 'from-red-500 to-orange-500'
+    title: 'Startup CFO Services',
+    description: 'Strategic finance leadership, investor-ready from day one.',
+    features: ['Accounting Setup and Compliance Hygiene', 'Cash Flow & Working Capital Management', 'Budgeting, Forecasting, and Financial Modeling', 'Due Diligence & Data Room Management', 'Governance Frameworks & KPI Dashboards'],
+    href: '/services/startup-cfo',
+    color: 'from-purple-500 to-indigo-500'
   },
   {
     icon: Smartphone,
-    title: 'Digital Transformation',
-    description: 'Modernize your business processes with cutting-edge digital solutions and automation.',
-    features: ['Process Automation', 'Legacy Modernization', 'Digital Strategy', 'Change Management'],
-    href: '/services/digital-transformation',
-    color: 'from-indigo-500 to-blue-500'
+    title: 'Legal Services',
+    description: 'Practical, startup-focused legal support without jargon.',
+    features: ['Founders\' Agreements & Shareholder Structures', 'ESOP Design, Exit Clauses, and Rights Management', 'Vendor, Client & Service Contracts', 'Employment Agreements, NDAs, and Risk Allocation'],
+    href: '/services/legal-services',
+    color: 'from-orange-500 to-red-500'
   },
   {
     icon: Zap,
-    title: 'Custom Development',
-    description: 'Tailored software solutions built specifically for your unique business requirements.',
-    features: ['Web Applications', 'Mobile Apps', 'API Development', 'System Integration'],
-    href: '/services/custom-development',
+    title: 'Company Secretarial Services',
+    description: 'Structure, compliance, and governance done right.',
+    features: ['Incorporation (Company, LLP, Partnership)', 'ROC Filings, Board Resolutions & Event-Based Compliances', 'Governance Frameworks under Companies Act, 2013'],
+    href: '/services/company-secretarial',
     color: 'from-yellow-500 to-orange-500'
   }
 ]
@@ -80,11 +72,11 @@ export function Services() {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-secondary-900 mb-6">
-            Our <span className="text-gradient">Services</span>
+            Our <span className="text-gradient">Core Services</span>
           </h2>
           <p className="text-xl text-secondary-600 text-balance">
-            Comprehensive technology solutions designed to accelerate your business growth 
-            and digital transformation journey.
+            Comprehensive financial solutions designed to bring structure to your numbers, 
+            strength to your strategy, and peace of mind to your journey.
           </p>
         </motion.div>
 
