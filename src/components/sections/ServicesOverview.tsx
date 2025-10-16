@@ -11,35 +11,35 @@ const services = [
     icon: Database,
     title: 'Finance Operations',
     description: 'Making your numbers make sense, every single time.',
-    href: '/services/finance-operations',
+    href: '/services?service=finance-operations',
     color: 'from-green-500 to-emerald-500'
   },
   {
     icon: Brain,
     title: 'Revenue Operations',
     description: 'Bringing visibility, rhythm, and results to your sales process.',
-    href: '/services/revenue-operations',
+    href: '/services?service=revenue-operations',
     color: 'from-blue-500 to-cyan-500'
   },
   {
     icon: Shield,
     title: 'Startup CFO Services',
     description: 'Strategic finance leadership, investor-ready from day one.',
-    href: '/services/startup-cfo',
+    href: '/services?service=startup-cfo',
     color: 'from-purple-500 to-indigo-500'
   },
   {
     icon: Smartphone,
     title: 'Legal Services',
     description: 'Practical, startup-focused legal support without jargon.',
-    href: '/services/legal-services',
+    href: '/services?service=legal-services',
     color: 'from-orange-500 to-red-500'
   },
   {
     icon: Zap,
     title: 'Company Secretarial',
     description: 'Structure, compliance, and governance done right.',
-    href: '/services/company-secretarial',
+    href: '/services?service=company-secretarial',
     color: 'from-yellow-500 to-orange-500'
   }
 ]
@@ -95,21 +95,6 @@ export function ServicesOverview() {
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="text-center"
-        >
-          <Link 
-            href="/services" 
-            className="inline-flex items-center space-x-2 bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-700 transition-colors duration-300 group"
-          >
-            <span>View All Services</span>
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
-          </Link>
-        </motion.div>
       </div>
     </section>
   )

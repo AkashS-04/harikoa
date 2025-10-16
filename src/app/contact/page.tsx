@@ -1,8 +1,6 @@
 import { Metadata } from 'next'
 import { ContactHero } from '@/components/pages/ContactHero'
 import { ContactForm } from '@/components/pages/ContactForm'
-import { ContactInfo } from '@/components/pages/ContactInfo'
-import { Map } from '@/components/pages/Map'
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -17,9 +15,7 @@ export default function ContactPage() {
   return (
     <>
       <ContactHero />
-      <ContactInfo />
       <ContactForm />
-      <Map />
     </>
   )
 }

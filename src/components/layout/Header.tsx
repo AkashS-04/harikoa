@@ -13,11 +13,11 @@ const navigation = [
     name: 'Services', 
     href: '/services',
     children: [
-      { name: 'Finance Operations', href: '/services/finance-operations' },
-      { name: 'Revenue Operations', href: '/services/revenue-operations' },
-      { name: 'Startup CFO Services', href: '/services/startup-cfo' },
-      { name: 'Legal Services', href: '/services/legal-services' },
-      { name: 'Company Secretarial', href: '/services/company-secretarial' },
+      { name: 'Finance Operations', href: '/services?service=finance-operations' },
+      { name: 'Revenue Operations', href: '/services?service=revenue-operations' },
+      { name: 'Startup CFO Services', href: '/services?service=startup-cfo' },
+      { name: 'Legal Services', href: '/services?service=legal-services' },
+      { name: 'Company Secretarial', href: '/services?service=company-secretarial' },
     ]
   },
   { name: 'Careers', href: '/careers' },
