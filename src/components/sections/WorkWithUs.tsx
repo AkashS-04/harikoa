@@ -14,7 +14,7 @@ export function WorkWithUs() {
     <section ref={ref} className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary-900/90 via-primary-800/80 to-accent-800/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-950/90 via-primary-800/80 to-accent-950/90"></div>
         <div className="absolute inset-0 opacity-20">
           <div className="w-full h-full bg-[radial-gradient(circle_at_1px_1px,_rgba(255,255,255,0.15)_1px,_transparent_0)] bg-[length:20px_20px]"></div>
         </div>

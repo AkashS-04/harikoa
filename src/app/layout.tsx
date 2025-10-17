@@ -12,8 +12,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'HariKoa - Financial Solutions & Business Growth',
-    template: '%s | HariKoa'
+    default: 'Harikoa - Financial Solutions & Business Growth',
+    template: '%s | Harikoa'
   },
   description: 'Bringing structure to your numbers, strength to your strategy, and peace of mind to your journey. Comprehensive financial services for growing businesses.',
   keywords: [
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     'compliance',
     'accounting'
   ],
-  authors: [{ name: 'HariKoa' }],
-  creator: 'HariKoa',
-  publisher: 'HariKoa',
+  authors: [{ name: 'Harikoa' }],
+  creator: 'Harikoa',
+  publisher: 'Harikoa',
   formatDetection: {
     email: false,
     address: false,
@@ -44,21 +44,21 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://harikoa.com',
-    title: 'HariKoa - Innovative Technology Solutions',
+    title: 'Harikoa - Innovative Technology Solutions',
     description: 'Leading technology consulting firm specializing in digital transformation, cloud solutions, and innovative software development.',
-    siteName: 'HariKoa',
+    siteName: 'Harikoa',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'HariKoa - Innovative Technology Solutions',
+        alt: 'Harikoa - Innovative Technology Solutions',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'HariKoa - Innovative Technology Solutions',
+    title: 'Harikoa - Innovative Technology Solutions',
     description: 'Leading technology consulting firm specializing in digital transformation, cloud solutions, and innovative software development.',
     images: ['/og-image.jpg'],
     creator: '@harikoa',

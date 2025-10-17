@@ -11,7 +11,7 @@ export function CTASection() {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section ref={ref} className="py-20 bg-gradient-to-br from-primary-600 to-accent-600 text-white">
+    <section ref={ref} className="py-20 bg-gradient-to-br from-primary-950 to-accent-950 text-white">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -19,12 +19,12 @@ export function CTASection() {
           transition={{ duration: 0.8 }}
           className="text-center max-w-4xl mx-auto"
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-8 font-montserrat">
+          <h2 className="text-5xl md:text-6xl font-bold mb-8 font-montserrat text-white">
             Build a Business That&apos;s Fulfilling, Structured, and Scalable
           </h2>
           
           <p className="text-xl md:text-2xl text-white/90 mb-12 font-roboto">
-            Let&apos;s start your journey with HariKoa today.
+            Let&apos;s start your journey with Harikoa today.
           </p>
 
           <motion.div

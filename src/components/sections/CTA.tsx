@@ -24,7 +24,7 @@ export function CTA() {
             Build a Business That&apos;s Fulfilling, Structured, and Scalable
           </h2>
           <p className="text-xl md:text-2xl text-white/90 mb-12 text-balance">
-            Let&apos;s start your journey with HariKoa today.
+            Let&apos;s start your journey with Harikoa today.
           </p>
 
           {/* CTA Buttons */}

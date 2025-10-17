@@ -21,7 +21,7 @@ const services = [
     description: 'Making your numbers make sense, every single time.',
     features: ['Accounting Setup, Bookkeeping & Reconciliation', 'Payroll Structuring and Execution', 'GST, TDS, PF/ESIC Filing and Compliance', 'Month-end Close, MIS & Audit Coordination'],
     href: '/services/finance-operations',
-    color: 'from-green-500 to-emerald-500'
+    color: 'from-primary-950 to-primary-800'
   },
   {
     icon: Brain,
@@ -29,7 +29,7 @@ const services = [
     description: 'Bringing visibility, rhythm, and results to your sales process.',
     features: ['Sales Compensation & Incentive Policy Design', 'Performance Analytics & Forecasting', 'Pipeline Management, Billing, and Collections', 'Pricing and Profitability Optimization'],
     href: '/services/revenue-operations',
-    color: 'from-blue-500 to-cyan-500'
+    color: 'from-primary-800 to-accent-950'
   },
   {
     icon: Shield,
@@ -37,7 +37,7 @@ const services = [
     description: 'Strategic finance leadership, investor-ready from day one.',
     features: ['Accounting Setup and Compliance Hygiene', 'Cash Flow & Working Capital Management', 'Budgeting, Forecasting, and Financial Modeling', 'Due Diligence & Data Room Management', 'Governance Frameworks & KPI Dashboards'],
     href: '/services/startup-cfo',
-    color: 'from-purple-500 to-indigo-500'
+    color: 'from-accent-950 to-accent-800'
   },
   {
     icon: Smartphone,
@@ -45,7 +45,7 @@ const services = [
     description: 'Practical, startup-focused legal support without jargon.',
     features: ['Founders\' Agreements & Shareholder Structures', 'ESOP Design, Exit Clauses, and Rights Management', 'Vendor, Client & Service Contracts', 'Employment Agreements, NDAs, and Risk Allocation'],
     href: '/services/legal-services',
-    color: 'from-orange-500 to-red-500'
+    color: 'from-accent-950 to-accent-800'
   },
   {
     icon: Zap,
@@ -53,7 +53,7 @@ const services = [
     description: 'Structure, compliance, and governance done right.',
     features: ['Incorporation (Company, LLP, Partnership)', 'ROC Filings, Board Resolutions & Event-Based Compliances', 'Governance Frameworks under Companies Act, 2013'],
     href: '/services/company-secretarial',
-    color: 'from-yellow-500 to-orange-500'
+    color: 'from-primary-700 to-accent-950'
   }
 ]
 

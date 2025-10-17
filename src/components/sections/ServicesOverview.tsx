@@ -12,35 +12,35 @@ const services = [
     title: 'Finance Operations',
     description: 'Making your numbers make sense, every single time.',
     href: '/services?service=finance-operations',
-    color: 'from-green-500 to-emerald-500'
+    color: 'from-primary-950 to-primary-800'
   },
   {
     icon: Brain,
     title: 'Revenue Operations',
     description: 'Bringing visibility, rhythm, and results to your sales process.',
     href: '/services?service=revenue-operations',
-    color: 'from-blue-500 to-cyan-500'
+    color: 'from-primary-800 to-accent-950'
   },
   {
     icon: Shield,
     title: 'Startup CFO Services',
     description: 'Strategic finance leadership, investor-ready from day one.',
     href: '/services?service=startup-cfo',
-    color: 'from-purple-500 to-indigo-500'
+    color: 'from-accent-950 to-accent-800'
   },
   {
     icon: Smartphone,
     title: 'Legal Services',
     description: 'Practical, startup-focused legal support without jargon.',
     href: '/services?service=legal-services',
-    color: 'from-orange-500 to-red-500'
+    color: 'from-accent-950 to-accent-800'
   },
   {
     icon: Zap,
     title: 'Company Secretarial',
     description: 'Structure, compliance, and governance done right.',
     href: '/services?service=company-secretarial',
-    color: 'from-yellow-500 to-orange-500'
+    color: 'from-primary-700 to-accent-950'
   }
 ]
 
@@ -57,8 +57,9 @@ export function ServicesOverview() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-bold text-secondary-900 mb-6 font-montserrat">
-            Our Core Services
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 font-montserrat">
+            <span className="text-primary-950">Our Core </span>
+            <span className="bg-gradient-to-r from-primary-950 via-accent-950 to-primary-950 bg-clip-text text-transparent">Services</span>
           </h2>
           <p className="text-xl text-secondary-600 max-w-3xl mx-auto font-roboto">
             Comprehensive financial solutions designed to bring structure to your numbers, 

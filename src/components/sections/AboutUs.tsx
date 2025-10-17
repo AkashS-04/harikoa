@@ -20,8 +20,9 @@ export function AboutUs() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-5xl md:text-6xl font-bold text-secondary-900 mb-8 font-montserrat">
-              About Us
+            <h2 className="text-5xl md:text-6xl font-bold mb-8 font-montserrat">
+              <span className="text-primary-950">About </span>
+              <span className="bg-gradient-to-r from-primary-950 via-accent-950 to-primary-950 bg-clip-text text-transparent">Us</span>
             </h2>
           </motion.div>
 
@@ -33,19 +34,19 @@ export function AboutUs() {
               className="space-y-6"
             >
               <p className="text-lg text-secondary-600">
-                <strong className="text-primary-600">HariKoa</strong>, a Maori term for <em>Happiness or Joy</em>.
+                <strong className="text-primary-600">Harikoa</strong>, a Maori term for <em>Happiness or Joy</em>.
               </p>
               
               <p className="text-lg text-secondary-600">
-                We at HariKoa are here to bring structure to your numbers, strength to your strategy, and peace of mind to your journey—so you can build a business that&apos;s both fulfilling and joyful.
+                We at Harikoa are here to bring structure to your numbers, strength to your strategy, and peace of mind to your journey—so you can build a business that&apos;s both fulfilling and joyful.
               </p>
               
               <p className="text-lg text-secondary-600">
-                HariKoa is comprised of team of entrepreneurs with a cumulative experience of over <strong className="text-primary-600">70 years of experience</strong> across <strong className="text-primary-600">Finance, Technology and Sales</strong>.
+                Harikoa is comprised of team of entrepreneurs with a cumulative experience of over <strong className="text-primary-600">70 years of experience</strong> across <strong className="text-primary-600">Finance, Technology and Sales</strong>.
               </p>
               
               <p className="text-lg text-secondary-600">
-                The team behind HariKoa has worked across large Corporates like <strong>Infosys, Deloitte, Tata and Xerox</strong> before starting their own entrepreneurial journey.
+                The team behind Harikoa has worked across large Corporates like <strong>Infosys, Deloitte, Tata and Xerox</strong> before starting their own entrepreneurial journey.
               </p>
 
               <motion.div
@@ -76,11 +77,14 @@ export function AboutUs() {
             >
               <div className="bg-gradient-to-br from-primary-100 to-accent-100 rounded-2xl p-8 h-96 flex items-center justify-center">
                 <div className="text-center">
-                  <div className="w-24 h-24 bg-gradient-to-br from-primary-600 to-accent-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <span className="text-white font-bold text-2xl">H</span>
+                  <div className="flex items-center justify-center">
+                    <span className="text-4xl font-bold text-primary-950 font-montserrat">har</span>
+                    <span className="text-4xl font-bold text-accent-950 font-montserrat">i</span>
+                    <span className="text-4xl font-bold text-primary-950 font-montserrat">koa</span>
                   </div>
-                  <h3 className="text-2xl font-bold text-secondary-900 mb-2">HariKoa</h3>
-                  <p className="text-secondary-600">Financial Solutions & Business Growth</p>
+                  <div className="w-24 h-1 bg-gradient-to-r from-primary-500 via-accent-500 to-primary-800 mx-auto"></div>
+                  <p className="text-lg font-bold text-accent-950 font-montserrat mb-3">consulting</p>
+                  <p className="text-secondary-600 font-roboto ml-2 text-lg">Financial Solutions & Business Growth</p>
                 </div>
               </div>
             </motion.div>

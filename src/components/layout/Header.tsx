@@ -54,11 +54,14 @@ export function Header() {
       <nav className="container-custom">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary-600 to-accent-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">H</span>
+          <Link href="/" className="flex flex-col items-start">
+            <div className="flex items-center">
+              <span className="text-2xl font-bold text-primary-950 font-montserrat">har</span>
+              <span className="text-2xl font-bold text-accent-950 font-montserrat">i</span>
+              <span className="text-2xl font-bold text-primary-950 font-montserrat">koa</span>
             </div>
-            <span className="text-xl font-bold text-secondary-900 font-montserrat">HariKoa</span>
+            <div className="w-20 h-0.5 bg-gradient-to-r from-primary-500 via-accent-500 to-primary-800 ml-[6px]"></div>
+            <span className="text-sm font-bold text-accent-950 font-montserrat ml-[6px]">consulting</span>
           </Link>
 
           {/* Desktop Navigation */}

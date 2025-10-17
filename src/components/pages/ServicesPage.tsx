@@ -148,7 +148,7 @@ export function ServicesPageContent() {
               {/* Service Header */}
               <div className="mb-6">
                 <h1 className="text-4xl font-bold text-gray-900 mb-3 font-montserrat">{activeService.title}</h1>
-                <p className="text-lg text-blue-600 font-medium mb-4 font-roboto">{activeService.tagline}</p>
+                <p className="text-lg text-primary-950 font-medium mb-4 font-roboto">{activeService.tagline}</p>
               </div>
 
               {/* Service Description */}
@@ -164,7 +164,7 @@ export function ServicesPageContent() {
                 <div className="grid grid-cols-2 gap-3">
                   {activeService.features.map((feature, index) => (
                     <div key={index} className="flex items-start space-x-2">
-                      <div className="w-1.5 h-1.5 bg-blue-600 rounded-full flex-shrink-0 mt-2"></div>
+                      <div className="w-1.5 h-1.5 bg-primary-950 rounded-full flex-shrink-0 mt-2"></div>
                       <span className="text-sm text-gray-700 font-roboto">{feature}</span>
                     </div>
                   ))}
@@ -175,9 +175,9 @@ export function ServicesPageContent() {
         </div>
 
         {/* Right Column - Services List */}
-        <div className="w-80 bg-gray-900 text-white h-full overflow-hidden pt-24">
+        <div className="w-80 bg-primary-950 text-white h-full overflow-hidden pt-24">
           <div className="p-4 h-full flex flex-col">
-            <h3 className="text-lg font-bold mb-6 text-center uppercase tracking-wide">OUR SERVICES</h3>
+            <h3 className="text-lg font-bold mb-6 text-center uppercase tracking-wide text-white">SERVICES</h3>
             <nav className="space-y-1 flex-1 overflow-y-auto">
               {services.map((service) => (
                 <button
@@ -185,8 +185,8 @@ export function ServicesPageContent() {
                   onClick={() => handleServiceClick(service)}
                   className={`w-full text-left p-3 rounded-lg transition-all duration-200 ${
                     activeService.id === service.id
-                      ? 'bg-blue-600 text-white'
-                      : 'text-gray-300 hover:text-white hover:bg-gray-800'
+                      ? 'bg-primary-600 text-white'
+                      : 'text-gray-300 hover:text-white hover:bg-primary-800'
                   }`}
                 >
                   <div className="flex items-center space-x-2">

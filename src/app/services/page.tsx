@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'Services',
   description: 'Comprehensive financial solutions including Finance Operations, Revenue Operations, Startup CFO Services, Legal Services, and Company Secretarial.',
   openGraph: {
-    title: 'Services | HariKoa',
+    title: 'Services | Harikoa',
     description: 'Comprehensive financial solutions including Finance Operations, Revenue Operations, Startup CFO Services, Legal Services, and Company Secretarial.',
   },
 }

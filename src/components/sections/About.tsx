@@ -59,7 +59,7 @@ export function About() {
             Who <span className="text-gradient">We Are</span>
           </h2>
           <p className="text-xl text-secondary-600 text-balance">
-            HariKoa, derived from the Māori word for <em>Happiness or Joy</em>, reflects our belief that success and fulfillment go hand in hand. With over <strong>70 years of combined experience</strong> across <strong>Finance, Technology, and Sales</strong>, our team has worked with industry leaders like Infosys, Deloitte, Tata, and Xerox before building HariKoa to help businesses scale confidently and sustainably.
+            Harikoa, derived from the Māori word for <em>Happiness or Joy</em>, reflects our belief that success and fulfillment go hand in hand. With over <strong>70 years of combined experience</strong> across <strong>Finance, Technology, and Sales</strong>, our team has worked with industry leaders like Infosys, Deloitte, Tata, and Xerox before building Harikoa to help businesses scale confidently and sustainably.
           </p>
         </motion.div>
 

@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Careers',
-  description: 'Join our team at HariKoa. We provide immense opportunities to employees across various industry verticals.',
+  description: 'Join our team at Harikoa. We provide immense opportunities to employees across various industry verticals.',
 }
 
 export default function CareersPage() {
@@ -14,7 +14,7 @@ export default function CareersPage() {
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-gray-900 mb-6 font-montserrat">Careers</h1>
             <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto font-roboto">
-              At <span className="text-primary-600 font-semibold">HariKoa</span>, we bring together a team with over 70 years of combined experience in <span className="text-primary-600 font-semibold">financial services</span>, having worked with industry leaders like Infosys, Deloitte, Tata, and Xerox. As a new firm with deep expertise, we offer exciting opportunities to join a dynamic team that&apos;s building the future of financial solutions. We are looking for bright minds who want to be part of our growth journey.
+              At <span className="text-primary-600 font-semibold">Harikoa</span>, we bring together a team with over 70 years of combined experience in <span className="text-primary-600 font-semibold">financial services</span>, having worked with industry leaders like Infosys, Deloitte, Tata, and Xerox. As a new firm with deep expertise, we offer exciting opportunities to join a dynamic team that&apos;s building the future of financial solutions. We are looking for bright minds who want to be part of our growth journey.
             </p>
           </div>
 

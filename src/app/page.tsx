@@ -1,5 +1,6 @@
 import { Welcome } from '@/components/sections/Welcome'
 import { AboutUs } from '@/components/sections/AboutUs'
+import { TeamPartners } from '@/components/sections/TeamPartners'
 import { ServicesOverview } from '@/components/sections/ServicesOverview'
 import { WorkWithUs } from '@/components/sections/WorkWithUs'
 import { CTASection } from '@/components/sections/CTASection'
@@ -15,6 +16,7 @@ export default function HomePage() {
     <>
       <Welcome />
       <AboutUs />
+      <TeamPartners />
       <ServicesOverview />
       <WorkWithUs />
       <CTASection />

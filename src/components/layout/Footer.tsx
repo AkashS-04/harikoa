@@ -51,11 +51,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center space-x-2 mb-6">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary-600 to-accent-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">H</span>
+            <Link href="/" className="flex flex-col items-start mb-6">
+              <div className="flex items-center">
+                <span className="text-2xl font-bold text-white font-montserrat">har</span>
+                <span className="text-2xl font-bold text-accent-300 font-montserrat">i</span>
+                <span className="text-2xl font-bold text-white font-montserrat">koa</span>
               </div>
-              <span className="text-xl font-bold font-montserrat">HariKoa</span>
+              <div className="w-20 h-0.5 bg-gradient-to-r from-primary-950 via-accent-950 to-primary-800 ml-[6px]"></div>
+              <span className="text-sm font-bold text-accent-300 font-montserrat ml-[6px]">consulting</span>
             </Link>
                    <p className="text-secondary-300 mb-6 max-w-md font-roboto">
                      Empowering businesses through personalized financial solutions. 
