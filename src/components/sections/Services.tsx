@@ -71,10 +71,10 @@ export function Services() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-secondary-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-secondary-900 mb-6 font-montserrat">
             Our <span className="text-gradient">Core Services</span>
           </h2>
-          <p className="text-xl text-secondary-600 text-balance">
+          <p className="text-xl text-secondary-600 text-balance font-roboto">
             Comprehensive financial solutions designed to bring structure to your numbers, 
             strength to your strategy, and peace of mind to your journey.
           </p>

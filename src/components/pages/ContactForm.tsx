@@ -90,10 +90,10 @@ export function ContactForm() {
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                   <CheckCircle className="w-8 h-8 text-green-600" />
                 </div>
-                <h3 className="text-2xl font-bold text-secondary-900 mb-4">
+                <h3 className="text-2xl font-bold text-secondary-900 mb-4 font-montserrat">
                   Message Sent Successfully!
                 </h3>
-                <p className="text-secondary-600">
+                <p className="text-secondary-600 font-roboto">
                   Thank you for reaching out. We&apos;ll get back to you within 24 hours.
                 </p>
               </motion.div>
@@ -102,7 +102,7 @@ export function ContactForm() {
                 {/* Personal Information */}
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-secondary-900 mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-secondary-900 mb-2 font-roboto">
                       Full Name *
                     </label>
                     <input
@@ -117,7 +117,7 @@ export function ContactForm() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-secondary-900 mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-secondary-900 mb-2 font-roboto">
                       Email Address *
                     </label>
                     <input

@@ -147,25 +147,25 @@ export function ServicesPageContent() {
             >
               {/* Service Header */}
               <div className="mb-6">
-                <h1 className="text-4xl font-bold text-gray-900 mb-3">{activeService.title}</h1>
-                <p className="text-lg text-blue-600 font-medium mb-4">{activeService.tagline}</p>
+                <h1 className="text-4xl font-bold text-gray-900 mb-3 font-montserrat">{activeService.title}</h1>
+                <p className="text-lg text-blue-600 font-medium mb-4 font-roboto">{activeService.tagline}</p>
               </div>
 
               {/* Service Description */}
               <div className="mb-6">
-                <p className="text-base text-gray-700 mb-3 leading-relaxed">
+                <p className="text-base text-gray-700 mb-3 leading-relaxed font-roboto">
                   {activeService.description}
                 </p>
               </div>
 
               {/* Features */}
               <div className="mb-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">What We Offer</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4 font-montserrat">What We Offer</h3>
                 <div className="grid grid-cols-2 gap-3">
                   {activeService.features.map((feature, index) => (
                     <div key={index} className="flex items-start space-x-2">
                       <div className="w-1.5 h-1.5 bg-blue-600 rounded-full flex-shrink-0 mt-2"></div>
-                      <span className="text-sm text-gray-700">{feature}</span>
+                      <span className="text-sm text-gray-700 font-roboto">{feature}</span>
                     </div>
                   ))}
                 </div>

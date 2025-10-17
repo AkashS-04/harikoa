@@ -32,7 +32,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-bold text-secondary-900 mb-6 text-balance"
+            className="text-5xl md:text-6xl lg:text-7xl font-bold text-secondary-900 mb-6 text-balance font-montserrat"
           >
             Bringing Structure to Your{' '}
             <span className="text-gradient">Numbers</span>
@@ -43,7 +43,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl md:text-2xl text-secondary-600 mb-8 max-w-3xl mx-auto text-balance"
+            className="text-xl md:text-2xl text-secondary-600 mb-8 max-w-3xl mx-auto text-balance font-roboto"
           >
             Partner with HariKoa — personalized financial solutions that propel your success forward.
           </motion.p>
@@ -73,20 +73,20 @@ export function Hero() {
             className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-2xl mx-auto"
           >
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary-600 mb-2">70+</div>
-              <div className="text-sm text-secondary-600">Years Combined Experience</div>
+              <div className="text-3xl md:text-4xl font-bold text-primary-600 mb-2 font-montserrat">70+</div>
+              <div className="text-sm text-secondary-600 font-roboto">Years Combined Experience</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary-600 mb-2">3</div>
-              <div className="text-sm text-secondary-600">Core Expertise Areas</div>
+              <div className="text-3xl md:text-4xl font-bold text-primary-600 mb-2 font-montserrat">3</div>
+              <div className="text-sm text-secondary-600 font-roboto">Core Expertise Areas</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary-600 mb-2">5</div>
-              <div className="text-sm text-secondary-600">Service Categories</div>
+              <div className="text-3xl md:text-4xl font-bold text-primary-600 mb-2 font-montserrat">5</div>
+              <div className="text-sm text-secondary-600 font-roboto">Service Categories</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary-600 mb-2">100%</div>
-              <div className="text-sm text-secondary-600">Client-Focused</div>
+              <div className="text-3xl md:text-4xl font-bold text-primary-600 mb-2 font-montserrat">100%</div>
+              <div className="text-sm text-secondary-600 font-roboto">Client-Focused</div>
             </div>
           </motion.div>
         </div>

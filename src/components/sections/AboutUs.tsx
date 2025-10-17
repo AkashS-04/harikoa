@@ -20,7 +20,7 @@ export function AboutUs() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-5xl md:text-6xl font-bold text-secondary-900 mb-8">
+            <h2 className="text-5xl md:text-6xl font-bold text-secondary-900 mb-8 font-montserrat">
               About Us
             </h2>
           </motion.div>

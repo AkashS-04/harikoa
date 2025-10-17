@@ -55,9 +55,9 @@ export function Footer() {
               <div className="w-8 h-8 bg-gradient-to-br from-primary-600 to-accent-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">H</span>
               </div>
-              <span className="text-xl font-bold">HariKoa</span>
+              <span className="text-xl font-bold font-montserrat">HariKoa</span>
             </Link>
-                   <p className="text-secondary-300 mb-6 max-w-md">
+                   <p className="text-secondary-300 mb-6 max-w-md font-roboto">
                      Empowering businesses through personalized financial solutions. 
                      We bring structure to your numbers, strength to your strategy, and 
                      peace of mind to your journey.

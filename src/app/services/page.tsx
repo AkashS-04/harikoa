@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import { Suspense } from 'react'
 import { ServicesPageContent } from '@/components/pages/ServicesPage'
 import { CTASection } from '@/components/sections/CTASection'
 
@@ -14,7 +15,9 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
-      <ServicesPageContent />
+      <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+        <ServicesPageContent />
+      </Suspense>
       <CTASection />
     </>
   )

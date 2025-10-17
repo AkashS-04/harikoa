@@ -19,11 +19,11 @@ export function CTASection() {
           transition={{ duration: 0.8 }}
           className="text-center max-w-4xl mx-auto"
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-8">
+          <h2 className="text-5xl md:text-6xl font-bold mb-8 font-montserrat">
             Build a Business That&apos;s Fulfilling, Structured, and Scalable
           </h2>
           
-          <p className="text-xl md:text-2xl text-white/90 mb-12">
+          <p className="text-xl md:text-2xl text-white/90 mb-12 font-roboto">
             Let&apos;s start your journey with HariKoa today.
           </p>
 

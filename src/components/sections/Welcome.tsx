@@ -37,7 +37,7 @@ export function Welcome() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-secondary-900 mb-8 sm:mb-12"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-secondary-900 mb-8 sm:mb-12 font-montserrat"
           >
             Empowering Your{' '}
             <span className="text-gradient">Financial Journey</span>
@@ -47,7 +47,7 @@ export function Welcome() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="space-y-6 text-lg md:text-xl text-secondary-600 max-w-4xl mx-auto mb-12"
+            className="space-y-6 text-lg md:text-xl text-secondary-600 max-w-4xl mx-auto mb-12 font-roboto"
           >
             <p className="text-2xl md:text-3xl font-semibold text-secondary-800">
               We&apos;re here to bring structure to your numbers, strength to your strategy, and peace of mind to your journey— so you can build a business that&apos;s both fulfilling and joyful.

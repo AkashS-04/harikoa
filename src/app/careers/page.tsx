@@ -12,9 +12,9 @@ export default function CareersPage() {
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-900 mb-6">Careers</h1>
-            <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
-              At <span className="text-primary-600 font-semibold">HariKoa</span>, we bring together a team with over 70 years of combined experience in <span className="text-primary-600 font-semibold">financial services</span>, having worked with industry leaders like Infosys, Deloitte, Tata, and Xerox. As a new firm with deep expertise, we offer exciting opportunities to join a dynamic team that's building the future of financial solutions. We are looking for bright minds who want to be part of our growth journey.
+            <h1 className="text-4xl font-bold text-gray-900 mb-6 font-montserrat">Careers</h1>
+            <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto font-roboto">
+              At <span className="text-primary-600 font-semibold">HariKoa</span>, we bring together a team with over 70 years of combined experience in <span className="text-primary-600 font-semibold">financial services</span>, having worked with industry leaders like Infosys, Deloitte, Tata, and Xerox. As a new firm with deep expertise, we offer exciting opportunities to join a dynamic team that&apos;s building the future of financial solutions. We are looking for bright minds who want to be part of our growth journey.
             </p>
           </div>
 
@@ -39,12 +39,12 @@ export default function CareersPage() {
 
             {/* Application Form */}
             <div className="bg-white rounded-lg shadow-soft p-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Apply Now</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 font-montserrat">Apply Now</h2>
               
               <form className="space-y-6">
                 {/* Name */}
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2 font-roboto">
                     NAME
                   </label>
                   <input

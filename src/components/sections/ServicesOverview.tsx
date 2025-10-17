@@ -57,10 +57,10 @@ export function ServicesOverview() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-bold text-secondary-900 mb-6">
+          <h2 className="text-5xl md:text-6xl font-bold text-secondary-900 mb-6 font-montserrat">
             Our Core Services
           </h2>
-          <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
+          <p className="text-xl text-secondary-600 max-w-3xl mx-auto font-roboto">
             Comprehensive financial solutions designed to bring structure to your numbers, 
             strength to your strategy, and peace of mind to your journey.
           </p>

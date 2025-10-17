@@ -46,7 +46,7 @@ export function ContactHero() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-bold text-secondary-900 mb-6 text-balance"
+            className="text-5xl md:text-6xl lg:text-7xl font-bold text-secondary-900 mb-6 text-balance font-montserrat"
           >
             Get in <span className="text-gradient">Touch</span>
           </motion.h1>
@@ -56,7 +56,7 @@ export function ContactHero() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl md:text-2xl text-secondary-600 mb-12 max-w-3xl mx-auto text-balance"
+            className="text-xl md:text-2xl text-secondary-600 mb-12 max-w-3xl mx-auto text-balance font-roboto"
           >
             We&apos;d love to hear from you. Whether you need structured finance operations, 
             strategic advisory, or legal support — let&apos;s talk.

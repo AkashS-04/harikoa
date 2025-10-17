@@ -32,7 +32,7 @@ export function WorkWithUs() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-8"
+                     className="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-8 font-montserrat"
             >
               Work with us
             </motion.h2>
@@ -41,7 +41,7 @@ export function WorkWithUs() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl leading-relaxed"
+                     className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl leading-relaxed font-roboto"
             >
               Join a dynamic team that blends financial precision with entrepreneurial energy. We believe in empowering our people to think strategically, act with integrity, and grow both personally and professionally.
             </motion.p>
