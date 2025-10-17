@@ -109,9 +109,9 @@ export function TeamPartners() {
           className="relative"
         >
           <div className="bg-white rounded-3xl shadow-xl border border-primary-100 overflow-hidden">
-            <div className="grid grid-cols-1 lg:grid-cols-2 h-[350px] overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[400px]">
               {/* Content Section */}
-              <div className="p-4 lg:p-6 flex flex-col justify-center overflow-y-auto">
+              <div className="p-4 lg:p-6 flex flex-col justify-center">
                 <motion.div
                   key={currentIndex}
                   initial={{ opacity: 0, x: -20 }}
@@ -121,45 +121,48 @@ export function TeamPartners() {
                 >
                   {/* Name and Title */}
                   <div className="bg-primary-950 text-white px-3 py-2 rounded-lg">
-                    <h3 className="text-lg font-bold font-montserrat mb-0.5">
+                    <h3 className="text-xl font-bold font-montserrat mb-0.5 text-white">
                       {teamMembers[currentIndex].name}
                     </h3>
-                    <p className="text-sm font-semibold text-primary-200 font-montserrat">
+                    <p className="text-base font-semibold text-primary-200 font-montserrat">
                       {teamMembers[currentIndex].title}
                     </p>
-                    <p className="text-xs text-primary-300 font-roboto">
+                    <p className="text-sm text-primary-300 font-roboto">
                       {teamMembers[currentIndex].qualifications}
                     </p>
                   </div>
 
-                  {/* Description */}
+                  {/* Compact Description */}
                   <div className="space-y-2">
-                    <p className="text-xs text-secondary-700 leading-relaxed font-roboto">
+                    <p className="text-sm text-secondary-700 leading-relaxed font-roboto">
                       {teamMembers[currentIndex].description}
                     </p>
                     
-                    {teamMembers[currentIndex].experience && (
-                      <p className="text-xs text-secondary-700 leading-relaxed font-roboto">
-                        {teamMembers[currentIndex].experience}
-                      </p>
-                    )}
+                    {/* Key Experience Points */}
+                    <div className="grid grid-cols-1 gap-1">
+                      {teamMembers[currentIndex].experience && (
+                        <div className="flex items-start space-x-2">
+                          <div className="w-1.5 h-1.5 bg-primary-600 rounded-full flex-shrink-0 mt-1.5"></div>
+                          <p className="text-sm text-secondary-700 font-roboto">
+                            {teamMembers[currentIndex].experience}
+                          </p>
+                        </div>
+                      )}
+                      
+                      {teamMembers[currentIndex].background && (
+                        <div className="flex items-start space-x-2">
+                          <div className="w-1.5 h-1.5 bg-accent-600 rounded-full flex-shrink-0 mt-1.5"></div>
+                          <p className="text-sm text-secondary-700 font-roboto">
+                            {teamMembers[currentIndex].background}
+                          </p>
+                        </div>
+                      )}
+                    </div>
 
-                    {teamMembers[currentIndex].background && (
-                      <p className="text-xs text-secondary-700 leading-relaxed font-roboto">
-                        {teamMembers[currentIndex].background}
-                      </p>
-                    )}
-
-                    {teamMembers[currentIndex].industries && (
-                      <p className="text-xs text-secondary-700 leading-relaxed font-roboto">
-                        {teamMembers[currentIndex].industries}
-                      </p>
-                    )}
-
-                    {/* Specializations */}
+                    {/* Specializations - Compact */}
                     <div className="bg-accent-50 p-2 rounded-lg">
-                      <p className="text-accent-950 font-semibold font-montserrat mb-0.5 text-xs">Specializations:</p>
-                      <p className="text-accent-800 font-roboto text-xs">
+                      <p className="text-accent-950 font-semibold font-montserrat mb-1 text-sm">Key Expertise:</p>
+                      <p className="text-accent-800 font-roboto text-sm">
                         {teamMembers[currentIndex].specializations}
                       </p>
                     </div>
