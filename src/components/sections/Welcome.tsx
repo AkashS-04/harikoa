@@ -84,23 +84,15 @@ export function Welcome() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6, delay: 1.0 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-2xl mx-auto"
+            className="flex flex-wrap justify-center gap-8 max-w-2xl mx-auto"
           >
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-primary-600 mb-2">70+</div>
               <div className="text-sm text-secondary-600">Years Combined Experience</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary-600 mb-2">5</div>
-              <div className="text-sm text-secondary-600">Core Services</div>
-            </div>
-            <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-primary-600 mb-2">100%</div>
               <div className="text-sm text-secondary-600">Client Focused</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary-600 mb-2">24/7</div>
-              <div className="text-sm text-secondary-600">Support Available</div>
             </div>
           </motion.div>
         </motion.div>

@@ -85,7 +85,7 @@ export function TeamPartners() {
   }
 
   return (
-    <section ref={ref} className="py-8 bg-gradient-to-br from-primary-50 via-white to-accent-50">
+    <section id="team" ref={ref} className="py-8 bg-gradient-to-br from-primary-50 via-white to-accent-50">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

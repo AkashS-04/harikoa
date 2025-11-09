@@ -46,7 +46,7 @@ export function AboutUs() {
               </p>
               
               <p className="text-lg text-secondary-600">
-                The team behind Harikoa has worked across large Corporates like <strong>Infosys, Deloitte, Tata and Xerox</strong> before starting their own entrepreneurial journey.
+                The team behind Harikoa has worked across large Corporates like <strong>Infosys, Deloitte and Tata</strong> before starting their own entrepreneurial journey.
               </p>
 
               <motion.div
