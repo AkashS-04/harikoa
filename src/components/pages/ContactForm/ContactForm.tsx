@@ -3,17 +3,8 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
-import { Send, CheckCircle, AlertCircle } from 'lucide-react'
-
-const services = [
-  'Cloud Solutions',
-  'AI & Machine Learning',
-  'Data Analytics',
-  'Cybersecurity',
-  'Digital Transformation',
-  'Custom Development',
-  'Other'
-]
+import { Send, CheckCircle } from 'lucide-react'
+import { services } from './contactFormData'
 
 export function ContactForm() {
   const ref = useRef(null)
@@ -159,7 +150,7 @@ export function ContactForm() {
                       value={formData.phone}
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200"
-                      placeholder="+1 (555) 123-4567"
+                      placeholder="Your phone number"
                     />
                   </div>
                 </div>
@@ -247,3 +238,4 @@ export function ContactForm() {
     </section>
   )
 }
+

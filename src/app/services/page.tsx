@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import { Suspense } from 'react'
-import { ServicesPageContent } from '@/components/pages/ServicesPage'
+import { ServicesPageContent } from '@/components/pages/ServicesPage/ServicesPage'
 import { CTASection } from '@/components/sections/CTASection'
 
 export const metadata: Metadata = {

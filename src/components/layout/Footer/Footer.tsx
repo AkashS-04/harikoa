@@ -1,43 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { 
-  Linkedin, 
-  Twitter, 
-  Facebook, 
-  Instagram, 
-  Mail, 
-  Phone, 
-  MapPin,
-  ArrowUp
-} from 'lucide-react'
-
-const footerLinks = {
-  services: [
-    { name: 'Finance Operations', href: '/services?service=finance-operations' },
-    { name: 'Revenue Operations', href: '/services?service=revenue-operations' },
-    { name: 'Startup CFO Services', href: '/services?service=startup-cfo' },
-    { name: 'Legal Services', href: '/services?service=legal-services' },
-    { name: 'Company Secretarial', href: '/services?service=company-secretarial' },
-  ],
-  company: [
-    { name: 'Careers', href: '/careers' },
-    { name: 'Contact', href: '/contact' },
-  ],
-  legal: [
-    { name: 'Privacy Policy', href: '/privacy' },
-    { name: 'Terms of Service', href: '/terms' },
-    { name: 'Cookie Policy', href: '/cookies' },
-    { name: 'GDPR', href: '/gdpr' },
-  ],
-}
-
-const socialLinks = [
-  { name: 'LinkedIn', href: '#', icon: Linkedin },
-  { name: 'Twitter', href: '#', icon: Twitter },
-  { name: 'Facebook', href: '#', icon: Facebook },
-  { name: 'Instagram', href: '#', icon: Instagram },
-]
+import { Mail, Phone, MapPin, ArrowUp } from 'lucide-react'
+import { footerLinks } from './footerData'
 
 export function Footer() {
   const scrollToTop = () => {
@@ -120,3 +85,4 @@ export function Footer() {
     </footer>
   )
 }
+
