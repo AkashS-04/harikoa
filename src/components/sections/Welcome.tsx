@@ -79,21 +79,16 @@ export function Welcome() {
             ))}
           </motion.div>
 
-          {/* Stats */}
+          {/* Metrics */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6, delay: 1.0 }}
-            className="flex flex-wrap justify-center gap-8 max-w-2xl mx-auto"
+            className="max-w-4xl mx-auto"
           >
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary-600 mb-2">70+</div>
-              <div className="text-sm text-secondary-600">Years Combined Experience</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary-600 mb-2">100%</div>
-              <div className="text-sm text-secondary-600">Client Focused</div>
-            </div>
+            <p className="text-base md:text-lg text-secondary-700 font-roboto">
+              70+ Person Years of Experience | 200+ Clients | 1 Belief — Business Should Feel Joyful
+            </p>
           </motion.div>
         </motion.div>
       </div>

@@ -34,19 +34,19 @@ export function AboutUs() {
               className="space-y-6"
             >
               <p className="text-lg text-secondary-600">
-                <strong className="text-primary-600">Harikoa</strong>, a Maori term for <em>Happiness or Joy</em>.
+                <strong className="text-primary-600">Harikoa</strong> — a Māori word meaning <em className="underline">happiness</em> or <em className="underline">joy</em> — reflects what we stand for: the joy of doing business right.
               </p>
               
               <p className="text-lg text-secondary-600">
-                We at Harikoa are here to bring structure to your numbers, strength to your strategy, and peace of mind to your journey—so you can build a business that&apos;s both fulfilling and joyful.
+                At <strong className="text-primary-600">Harikoa Consulting</strong>, we turn financial data into direction — helping you improve margins, manage risk, and scale with confidence to build a business that&apos;s both profitable and joyful.
               </p>
               
               <p className="text-lg text-secondary-600">
-                Harikoa is comprised of team of entrepreneurs with a cumulative experience of over <strong className="text-primary-600">70 years of experience</strong> across <strong className="text-primary-600">Finance, Technology and Sales</strong>.
+                Our team brings together over <strong className="text-primary-600">70 years of collective experience</strong> across Finance, Technology, Company Secretarial and Revenue Operations.
               </p>
               
               <p className="text-lg text-secondary-600">
-                The team behind Harikoa has worked across large Corporates like <strong>Infosys, Deloitte and Tata</strong> before starting their own entrepreneurial journey.
+                Our team has worked with industry leaders like <strong className="text-primary-600">Infosys, Deloitte, Tata, and the Hinduja Group</strong>, before embarking on our own entrepreneurial journey — to help businesses grow with structure, integrity, and clarity.
               </p>
 
               <motion.div

@@ -30,24 +30,13 @@ const teamMembers = [
   },
   {
     id: 3,
-    name: 'Ram',
-    title: 'Senior Advisor',
-    qualifications: 'CA, CFA',
-    description: 'Ram brings over 20 years of experience in financial advisory and investment banking. He has worked with leading financial institutions and has extensive experience in capital markets and corporate finance.',
-    experience: 'Previously worked with top-tier investment banks and has been instrumental in raising over $500M in capital for various companies across different sectors.',
-    background: 'Ram has a strong track record in M&A transactions, IPO advisory, and strategic financial planning for mid to large-scale enterprises.',
-    specializations: 'Ram specializes in Capital Markets, M&A Advisory, Corporate Finance, and Strategic Planning.',
-    image: '/api/placeholder/300/300'
-  },
-  {
-    id: 4,
-    name: 'Namrata',
-    title: 'Senior Advisor',
-    qualifications: 'CA, MBA Finance',
-    description: 'Namrata is a seasoned finance professional with over 15 years of experience in financial planning and analysis. She has worked with both startups and established corporations.',
-    experience: 'She has extensive experience in financial modeling, budgeting, and forecasting. Namrata has helped numerous companies optimize their financial processes and improve profitability.',
-    background: 'Prior to joining as an advisor, Namrata worked with leading consulting firms and has been involved in financial transformation projects for Fortune 500 companies.',
-    specializations: 'Namrata specializes in Financial Planning & Analysis, Budgeting & Forecasting, Financial Modeling, and Process Optimization.',
+    name: 'Namrata Bang',
+    title: 'Company Secretary',
+    qualifications: 'B.Com, ACS',
+    description: 'Namrata is a Qualified Company Secretary and Commerce Graduate, holding a Post Graduate Diploma in Finance, with strong knowledge and practical experience in Company Law and Corporate Legal Compliances. Proficient in handling a wide range of matters including Corporate Laws, IPO processes, Due Diligence, Legal Drafting, FEMA Compliances, and Trademark Registrations.',
+    experience: 'She demonstrates expertise in ensuring statutory and regulatory compliance, while providing strategic advisory on corporate governance frameworks. Known for a detail-oriented approach, strong analytical skills, and the ability to manage complex corporate transactions efficiently and effectively.',
+    background: '',
+    specializations: 'Namrata specializes in Corporate Laws, IPO Processes, Due Diligence, Legal Drafting, FEMA Compliances, Trademark Registrations, Statutory & Regulatory Compliance, and Corporate Governance Frameworks.',
     image: '/api/placeholder/300/300'
   }
 ]

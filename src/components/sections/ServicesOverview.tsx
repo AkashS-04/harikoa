@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import Link from 'next/link'
-import { ArrowRight, Database, Brain, Shield, Smartphone, Zap } from 'lucide-react'
+import { ArrowRight, Database, Brain, Shield, Smartphone, Zap, TrendingUp, FileText, BarChart, Heart } from 'lucide-react'
 
 const services = [
   {
@@ -41,6 +41,34 @@ const services = [
     description: 'Structure, compliance, and governance done right.',
     href: '/services?service=company-secretarial',
     color: 'from-primary-700 to-accent-950'
+  },
+  {
+    icon: TrendingUp,
+    title: 'Financial Advisory Services',
+    description: 'Fund Raising, Valuation and Due Diligence',
+    href: '/services?service=financial-advisory',
+    color: 'from-primary-950 to-primary-700'
+  },
+  {
+    icon: FileText,
+    title: 'Taxation Services',
+    description: 'Income Tax, GST and International Taxation',
+    href: '/services?service=taxation-services',
+    color: 'from-accent-950 to-accent-700'
+  },
+  {
+    icon: BarChart,
+    title: 'Business Analytics',
+    description: 'Bringing clarity to your numbers',
+    href: '/services?service=business-analytics',
+    color: 'from-primary-800 to-accent-800'
+  },
+  {
+    icon: Heart,
+    title: 'Not for Profit Services',
+    description: 'Bringing Trust to the impact created.',
+    href: '/services?service=not-for-profit',
+    color: 'from-accent-800 to-primary-800'
   }
 ]
 
@@ -76,18 +104,18 @@ export function ServicesOverview() {
               transition={{ duration: 0.6, delay: 0.1 * index }}
               className="group"
             >
-              <Link href={service.href} className="block">
-                <div className="bg-white rounded-2xl p-8 shadow-soft hover:shadow-medium transition-all duration-300 border border-primary-100 hover:border-primary-200 h-full">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+              <Link href={service.href} className="block h-full">
+                <div className="bg-white rounded-2xl p-8 shadow-soft hover:shadow-medium transition-all duration-300 border border-primary-100 hover:border-primary-200 h-full flex flex-col min-h-[280px]">
+                  <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
                     <service.icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-secondary-900 mb-3 group-hover:text-primary-600 transition-colors duration-300">
+                  <h3 className="text-xl font-bold text-secondary-900 mb-3 group-hover:text-primary-600 transition-colors duration-300 flex-shrink-0">
                     {service.title}
                   </h3>
-                  <p className="text-secondary-600 mb-4">
+                  <p className="text-secondary-600 mb-4 flex-grow min-h-[48px]">
                     {service.description}
                   </p>
-                  <div className="flex items-center text-primary-600 font-semibold group-hover:translate-x-2 transition-transform duration-300">
+                  <div className="flex items-center text-primary-600 font-semibold group-hover:translate-x-2 transition-transform duration-300 flex-shrink-0 mt-auto">
                     <span>Learn More</span>
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </div>

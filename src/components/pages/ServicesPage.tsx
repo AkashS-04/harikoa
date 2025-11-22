@@ -11,7 +11,10 @@ import {
   Users, 
   Scale, 
   FileText,
-  ArrowRight
+  ArrowRight,
+  Briefcase,
+  BarChart,
+  Heart
 } from 'lucide-react'
 
 const services = [
@@ -105,6 +108,57 @@ const services = [
       'Compliance under the Companies Act, 2013',
       'Guidance on board composition, governance frameworks',
       'Event based compliances'
+    ]
+  },
+  {
+    id: 'financial-advisory',
+    title: 'Financial Advisory Services',
+    tagline: 'Clarity, Credibility, Confidence',
+    description: 'Helping businesses make sound, strategic, and forward-looking financial decisions. Our focus is on clarity, credibility, and confidence — across every stage of growth. We focus on three key areas where clarity and expertise matter most:',
+    icon: Briefcase,
+    features: [
+      'Valuation Services: Independent, data-driven valuations for mergers, acquisitions, and funding discussions.',
+      'Fund Raising: End-to-end support from financial story refinement to deal structuring and capital securing.',
+      'Due Diligence: Comprehensive assessment of financial health, operations, and compliance to uncover opportunities and risks.'
+    ]
+  },
+  {
+    id: 'business-analytics',
+    title: 'Business Analytics Services',
+    tagline: 'Turning Questions into Data-Driven Clarity',
+    description: 'Why are profits not rising despite higher sales? Are we pricing right, spending right, and hiring at the right time? At Harikoa Consulting, our Business Analytics Practice turns such everyday questions into data-driven clarity. We help businesses uncover insights that improve profitability, strengthen decision-making, and bring foresight to growth.',
+    icon: BarChart,
+    features: [
+      'Pricing & Profitability Analytics: Identify profit leaks, understand true cost-to-serve, evaluate pricing models and contribution margins.',
+      'Customer Analytics: Segment customers by profitability and lifetime value, uncover behavior trends, and design strategies to improve loyalty.',
+      'Treasury Analytics: Gain visibility into cash flows and working capital, identify funding gaps, and build real-time treasury dashboards.',
+      'People Analytics: Understand workforce productivity, forecast hiring needs, and connect people metrics with business outcomes.'
+    ]
+  },
+  {
+    id: 'taxation-services',
+    title: 'Taxation Services',
+    tagline: 'Clarity and Confidence in Tax Compliance',
+    description: 'At Harikoa, we help businesses navigate the evolving tax landscape with clarity and confidence. Our Taxation Practice offers expert support across Income Tax, GST, and International Tax, blending technical precision with a practical, business-first approach.',
+    icon: FileText,
+    features: [
+      'Income Tax: Comprehensive planning and compliance, tax return filing, TDS reconciliations, and representation before authorities.',
+      'GST: End-to-end compliance including registration, returns, reconciliations, advisory on input credit, and audit assistance.',
+      'International Taxation: Advisory on cross-border transactions, transfer pricing, DTAA, and structuring inbound/outbound investments.',
+      'Corporate & Transactional Tax: Tax due diligence for M&A, transaction impact analysis, and advisory on indirect tax implications and MAT.'
+    ]
+  },
+  {
+    id: 'not-for-profit',
+    title: 'Not for Profit Services',
+    tagline: 'Bringing Trust to the Impact Created',
+    description: 'Purpose-led organizations carry a responsibility that goes beyond performance—they carry trust. At Harikoa, we partner with non-profits, NGOs, trusts, and social enterprises to help them stay compliant, accountable, and financially sustainable. Our approach combines professional rigour with empathy for the unique challenges that the development sector faces. We understand that in the not-for-profit world, every rupee, every report, and every regulation matters. Our role is to ensure your organization remains transparent, audit-ready, and positioned for long-term impact.',
+    icon: Heart,
+    features: [
+      'Registrations & Statutory Compliance: End-to-end support for Trust, Society, or Section 8 Company registration, 12A and 80G registrations and renewals, FCRA registration and compliance, and ongoing annual returns and ROC filings.',
+      'Financial Management & Reporting: Customized accounting frameworks for donor and project-based reporting, budgeting and fund allocation tracking, preparation of financial statements and donor reports, and internal controls for fund flow and expense management.',
+      'Audit & Assurance Support: Preparation and documentation for statutory, internal, and donor audits, review of accounting records and fund utilization statements, coordination with auditors and resolution of audit observations, and periodic internal review mechanisms.',
+      'Governance & Capacity Building: Structuring boards and committees for clarity of roles, drafting policies for finance, procurement, HR, and conflict of interest, training for trustees and finance teams on compliance best practices, and setting up MIS and dashboards for effective monitoring.'
     ]
   }
 ]
