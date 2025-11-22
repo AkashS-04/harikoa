@@ -1,25 +1,24 @@
 import { Metadata } from 'next'
-import { ServicesHero } from '@/components/pages/ServicesHero'
-import { ServicesGrid } from '@/components/pages/ServicesGrid'
-import { Process } from '@/components/pages/Process'
-import { CTA } from '@/components/sections/CTA'
+import { Suspense } from 'react'
+import { ServicesPageContent } from '@/components/pages/ServicesPage'
+import { CTASection } from '@/components/sections/CTASection'
 
 export const metadata: Metadata = {
   title: 'Services',
-  description: 'Comprehensive technology solutions including cloud services, AI & ML, data analytics, cybersecurity, and custom development.',
+  description: 'Comprehensive financial solutions including Finance Operations, Revenue Operations, Startup CFO Services, Legal Services, and Company Secretarial.',
   openGraph: {
-    title: 'Services | HariKoa',
-    description: 'Comprehensive technology solutions including cloud services, AI & ML, data analytics, cybersecurity, and custom development.',
+    title: 'Services | Harikoa',
+    description: 'Comprehensive financial solutions including Finance Operations, Revenue Operations, Startup CFO Services, Legal Services, and Company Secretarial.',
   },
 }
 
 export default function ServicesPage() {
   return (
     <>
-      <ServicesHero />
-      <ServicesGrid />
-      <Process />
-      <CTA />
+      <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+        <ServicesPageContent />
+      </Suspense>
+      <CTASection />
     </>
   )
 }

@@ -1,4 +1,4 @@
-# HariKoa - Corporate Website
+# Harikoa - Corporate Website
 
 A modern, professional corporate website built with Next.js 14, TypeScript, and Tailwind CSS. This project showcases a technology consulting firm with a clean, minimalistic design inspired by high-end corporate websites.
 
@@ -153,4 +153,4 @@ For support or questions, please contact us at hello@harikoa.com
 
 ---
 
-Built with ❤️ by the HariKoa team
+Built with ❤️ by the Harikoa team

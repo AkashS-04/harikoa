@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X, ChevronDown } from 'lucide-react'
@@ -9,15 +9,20 @@ import { cn } from '@/lib/utils'
 
 const navigation = [
   { name: 'Home', href: '/' },
+  { name: 'Team', href: '/#team' },
   { 
     name: 'Services', 
     href: '/services',
     children: [
-      { name: 'Digital Transformation', href: '/services/digital-transformation' },
-      { name: 'Cloud Solutions', href: '/services/cloud-solutions' },
-      { name: 'AI & Machine Learning', href: '/services/ai-ml' },
-      { name: 'Data Analytics', href: '/services/data-analytics' },
-      { name: 'Cybersecurity', href: '/services/cybersecurity' },
+      { name: 'Finance Operations', href: '/services?service=finance-operations' },
+      { name: 'Revenue Operations', href: '/services?service=revenue-operations' },
+      { name: 'Startup CFO Services', href: '/services?service=startup-cfo' },
+      { name: 'Legal Services', href: '/services?service=legal-services' },
+      { name: 'Company Secretarial', href: '/services?service=company-secretarial' },
+      { name: 'Financial Advisory Services', href: '/services?service=financial-advisory' },
+      { name: 'Taxation Services', href: '/services?service=taxation-services' },
+      { name: 'Business Analytics', href: '/services?service=business-analytics' },
+      { name: 'Not for Profit Services', href: '/services?service=not-for-profit' },
     ]
   },
   { name: 'Careers', href: '/careers' },
@@ -29,6 +34,7 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const pathname = usePathname()
+  const dropdownRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,6 +42,20 @@ export function Header() {
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setActiveDropdown(null)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
   }, [])
 
   const handleDropdownToggle = (itemName: string) => {
@@ -54,11 +74,14 @@ export function Header() {
       <nav className="container-custom">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary-600 to-accent-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">H</span>
+          <Link href="/" className="flex flex-col items-start">
+            <div className="flex items-center">
+              <span className="text-2xl font-bold text-primary-950 font-montserrat">har</span>
+              <span className="text-2xl font-bold text-accent-950 font-montserrat">i</span>
+              <span className="text-2xl font-bold text-primary-950 font-montserrat">koa</span>
             </div>
-            <span className="text-xl font-bold text-secondary-900">HariKoa</span>
+            <div className="w-20 h-0.5 bg-gradient-to-r from-primary-500 via-accent-500 to-primary-800 ml-[6px]"></div>
+            <span className="text-sm font-bold text-accent-950 font-montserrat ml-[6px]">consulting</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -66,7 +89,7 @@ export function Header() {
             {navigation.map((item) => (
               <div key={item.name} className="relative">
                 {item.children ? (
-                  <div className="relative">
+                  <div className="relative" ref={dropdownRef}>
                     <button
                       onClick={() => handleDropdownToggle(item.name)}
                       className="flex items-center space-x-1 text-secondary-700 hover:text-primary-600 transition-colors duration-200"
@@ -111,12 +134,6 @@ export function Header() {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden lg:flex items-center space-x-4">
-            <Link href="/contact" className="btn-primary">
-              Get Started
-            </Link>
-          </div>
 
           {/* Mobile menu button */}
           <button
@@ -187,11 +204,6 @@ export function Header() {
                     )}
                   </div>
                 ))}
-                <div className="pt-4 px-4">
-                  <Link href="/contact" className="btn-primary w-full">
-                    Get Started
-                  </Link>
-                </div>
               </div>
             </motion.div>
           )}

@@ -12,25 +12,25 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'HariKoa - Innovative Technology Solutions',
-    template: '%s | HariKoa'
+    default: 'Harikoa - Financial Solutions & Business Growth',
+    template: '%s | Harikoa'
   },
-  description: 'Leading technology consulting firm specializing in digital transformation, cloud solutions, and innovative software development. Empowering businesses to thrive in the digital age.',
+  description: 'Bringing structure to your numbers, strength to your strategy, and peace of mind to your journey. Comprehensive financial services for growing businesses.',
   keywords: [
-    'technology consulting',
-    'digital transformation',
-    'cloud solutions',
-    'software development',
-    'innovation',
-    'technology services',
-    'enterprise solutions',
-    'AI and machine learning',
-    'data analytics',
-    'cybersecurity'
+    'financial services',
+    'finance operations',
+    'revenue operations',
+    'startup CFO',
+    'legal services',
+    'company secretarial',
+    'business growth',
+    'financial strategy',
+    'compliance',
+    'accounting'
   ],
-  authors: [{ name: 'HariKoa' }],
-  creator: 'HariKoa',
-  publisher: 'HariKoa',
+  authors: [{ name: 'Harikoa' }],
+  creator: 'Harikoa',
+  publisher: 'Harikoa',
   formatDetection: {
     email: false,
     address: false,
@@ -44,21 +44,21 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://harikoa.com',
-    title: 'HariKoa - Innovative Technology Solutions',
+    title: 'Harikoa - Innovative Technology Solutions',
     description: 'Leading technology consulting firm specializing in digital transformation, cloud solutions, and innovative software development.',
-    siteName: 'HariKoa',
+    siteName: 'Harikoa',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'HariKoa - Innovative Technology Solutions',
+        alt: 'Harikoa - Innovative Technology Solutions',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'HariKoa - Innovative Technology Solutions',
+    title: 'Harikoa - Innovative Technology Solutions',
     description: 'Leading technology consulting firm specializing in digital transformation, cloud solutions, and innovative software development.',
     images: ['/og-image.jpg'],
     creator: '@harikoa',
