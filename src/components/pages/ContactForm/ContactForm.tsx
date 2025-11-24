@@ -54,46 +54,46 @@ export function ContactForm() {
   }
 
   return (
-    <section ref={ref} id="contact-form" className="section-padding bg-gradient-soft">
+    <section ref={ref} id="contact-form" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-soft">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto"
+          className="max-w-4xl mx-auto px-4 sm:px-6"
         >
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-secondary-900 mb-6">
+          <div className="text-center mb-8 sm:mb-10 md:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-900 mb-4 sm:mb-6 font-montserrat">
               Send Us a <span className="text-gradient">Message</span>
             </h2>
-            <p className="text-xl text-secondary-600 text-balance">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-secondary-600 text-balance font-roboto">
               Fill out the form below and we&apos;ll get back to you within 24 hours.
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-large p-8 md:p-12">
+          <div className="bg-white rounded-xl sm:rounded-2xl shadow-large p-6 sm:p-8 md:p-10 lg:p-12">
             {submitStatus === 'success' ? (
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="text-center py-12"
+                className="text-center py-8 sm:py-10 md:py-12"
               >
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <CheckCircle className="w-8 h-8 text-green-600" />
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                  <CheckCircle className="w-6 h-6 sm:w-8 sm:h-8 text-green-600" />
                 </div>
-                <h3 className="text-2xl font-bold text-secondary-900 mb-4 font-montserrat">
+                <h3 className="text-xl sm:text-2xl font-bold text-secondary-900 mb-3 sm:mb-4 font-montserrat">
                   Message Sent Successfully!
                 </h3>
-                <p className="text-secondary-600 font-roboto">
+                <p className="text-sm sm:text-base text-secondary-600 font-roboto">
                   Thank you for reaching out. We&apos;ll get back to you within 24 hours.
                 </p>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5 md:space-y-6">
                 {/* Personal Information */}
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-secondary-900 mb-2 font-roboto">
+                    <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-secondary-900 mb-1.5 sm:mb-2 font-roboto">
                       Full Name *
                     </label>
                     <input
@@ -103,12 +103,12 @@ export function ContactForm() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200"
+                      className="w-full px-3 py-2.5 sm:px-4 sm:py-3 text-sm sm:text-base border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200"
                       placeholder="Your full name"
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-secondary-900 mb-2 font-roboto">
+                    <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-secondary-900 mb-1.5 sm:mb-2 font-roboto">
                       Email Address *
                     </label>
                     <input
@@ -118,15 +118,15 @@ export function ContactForm() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200"
+                      className="w-full px-3 py-2.5 sm:px-4 sm:py-3 text-sm sm:text-base border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200"
                       placeholder="your@email.com"
                     />
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
                   <div>
-                    <label htmlFor="company" className="block text-sm font-medium text-secondary-900 mb-2">
+                    <label htmlFor="company" className="block text-xs sm:text-sm font-medium text-secondary-900 mb-1.5 sm:mb-2 font-roboto">
                       Company
                     </label>
                     <input
@@ -135,12 +135,12 @@ export function ContactForm() {
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200"
+                      className="w-full px-3 py-2.5 sm:px-4 sm:py-3 text-sm sm:text-base border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200"
                       placeholder="Your company name"
                     />
                   </div>
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-secondary-900 mb-2">
+                    <label htmlFor="phone" className="block text-xs sm:text-sm font-medium text-secondary-900 mb-1.5 sm:mb-2 font-roboto">
                       Phone Number
                     </label>
                     <input
@@ -149,7 +149,7 @@ export function ContactForm() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200"
+                      className="w-full px-3 py-2.5 sm:px-4 sm:py-3 text-sm sm:text-base border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200"
                       placeholder="Your phone number"
                     />
                   </div>
@@ -157,7 +157,7 @@ export function ContactForm() {
 
                 {/* Service Selection */}
                 <div>
-                  <label htmlFor="service" className="block text-sm font-medium text-secondary-900 mb-2">
+                  <label htmlFor="service" className="block text-xs sm:text-sm font-medium text-secondary-900 mb-1.5 sm:mb-2 font-roboto">
                     Service Interest
                   </label>
                   <select
@@ -165,7 +165,7 @@ export function ContactForm() {
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200"
+                    className="w-full px-3 py-2.5 sm:px-4 sm:py-3 text-sm sm:text-base border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200"
                   >
                     <option value="">Select a service</option>
                     {services.map((service) => (
@@ -178,7 +178,7 @@ export function ContactForm() {
 
                 {/* Subject */}
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-secondary-900 mb-2">
+                  <label htmlFor="subject" className="block text-xs sm:text-sm font-medium text-secondary-900 mb-1.5 sm:mb-2 font-roboto">
                     Subject *
                   </label>
                   <input
@@ -188,14 +188,14 @@ export function ContactForm() {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200"
+                    className="w-full px-3 py-2.5 sm:px-4 sm:py-3 text-sm sm:text-base border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200"
                     placeholder="Brief description of your inquiry"
                   />
                 </div>
 
                 {/* Message */}
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-secondary-900 mb-2">
+                  <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-secondary-900 mb-1.5 sm:mb-2 font-roboto">
                     Message *
                   </label>
                   <textarea
@@ -204,28 +204,28 @@ export function ContactForm() {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    rows={6}
-                    className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200 resize-none"
+                    rows={5}
+                    className="w-full px-3 py-2.5 sm:px-4 sm:py-3 text-sm sm:text-base border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200 resize-none"
                     placeholder="Tell us about your project, requirements, or any questions you have&hellip;"
                   />
                 </div>
 
                 {/* Submit Button */}
-                <div className="text-center">
+                <div className="text-center pt-2">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="btn-primary text-lg px-8 py-4 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="btn-primary text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 disabled:opacity-50 disabled:cursor-not-allowed w-full sm:w-auto"
                   >
                     {isSubmitting ? (
-                      <div className="flex items-center">
-                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
-                        Sending...
+                      <div className="flex items-center justify-center">
+                        <div className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
+                        <span>Sending...</span>
                       </div>
                     ) : (
-                      <div className="flex items-center">
-                        <Send className="w-5 h-5 mr-2" />
-                        Send Message
+                      <div className="flex items-center justify-center">
+                        <Send className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                        <span>Send Message</span>
                       </div>
                     )}
                   </button>
