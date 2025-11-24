@@ -6,28 +6,7 @@ import { usePathname } from 'next/navigation'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/lib/utils'
-
-const navigation = [
-  { name: 'Home', href: '/' },
-  { name: 'Team', href: '/#team' },
-  { 
-    name: 'Services', 
-    href: '/services',
-    children: [
-      { name: 'Finance Operations', href: '/services?service=finance-operations' },
-      { name: 'Revenue Operations', href: '/services?service=revenue-operations' },
-      { name: 'Startup CFO Services', href: '/services?service=startup-cfo' },
-      { name: 'Legal Services', href: '/services?service=legal-services' },
-      { name: 'Company Secretarial', href: '/services?service=company-secretarial' },
-      { name: 'Financial Advisory Services', href: '/services?service=financial-advisory' },
-      { name: 'Taxation Services', href: '/services?service=taxation-services' },
-      { name: 'Business Analytics', href: '/services?service=business-analytics' },
-      { name: 'Not for Profit Services', href: '/services?service=not-for-profit' },
-    ]
-  },
-  { name: 'Careers', href: '/careers' },
-  { name: 'Contact', href: '/contact' },
-]
+import { navigation } from './navigationData'
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -212,3 +191,4 @@ export function Header() {
     </header>
   )
 }
+

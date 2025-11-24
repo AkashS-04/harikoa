@@ -3,18 +3,11 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { TrendingUp, Shield, Target, Users } from 'lucide-react'
+import { features } from './welcomeData'
 
 export function Welcome() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
-
-  const features = [
-    { icon: TrendingUp, text: 'Financial Growth' },
-    { icon: Shield, text: 'Risk Management' },
-    { icon: Target, text: 'Strategic Planning' },
-    { icon: Users, text: 'Team Excellence' }
-  ]
 
   return (
     <section ref={ref} className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-100 via-white to-accent-100 relative overflow-hidden pt-24 pb-16">
@@ -33,7 +26,7 @@ export function Welcome() {
           className="max-w-5xl mx-auto text-center px-4 sm:px-6 lg:px-8"
         >
 
-          <motion.h1
+<motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -95,3 +88,4 @@ export function Welcome() {
     </section>
   )
 }
+

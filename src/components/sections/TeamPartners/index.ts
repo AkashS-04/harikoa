@@ -1,0 +1,2 @@
+export { TeamPartners } from './TeamPartners'
+
