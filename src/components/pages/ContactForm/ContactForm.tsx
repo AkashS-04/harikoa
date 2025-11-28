@@ -3,7 +3,8 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
-import { Send, CheckCircle } from 'lucide-react'
+import { Send, CheckCircle, AlertCircle } from 'lucide-react'
+import emailjs from '@emailjs/browser'
 import { services } from './contactFormData'
 
 export function ContactForm() {
@@ -20,30 +21,73 @@ export function ContactForm() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    
-    setIsSubmitting(false)
-    setSubmitStatus('success')
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setSubmitStatus('idle')
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        phone: '',
-        service: '',
-        subject: '',
-        message: ''
-      })
-    }, 3000)
+    setSubmitStatus('idle')
+    setErrorMessage('')
+
+    try {
+      // Validate environment variables
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_CONTACT
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error('EmailJS configuration is missing. Please check your environment variables.')
+      }
+
+      // Prepare template parameters
+      // Note: The recipient email is set in your EmailJS template settings
+      // You can also use {{to_email}} in your template if you want to make it dynamic
+      const templateParams = {
+        name: formData.name,
+        email: formData.email,
+        company: formData.company || 'Not provided',
+        phone: formData.phone || 'Not provided',
+        service: formData.service || 'Not specified',
+        subject: formData.subject,
+        message: formData.message,
+        // Optional: Uncomment and set if you want to use dynamic recipient in template
+        // to_email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'info@harikoa.com',
+      }
+
+      // Send email via EmailJS
+      await emailjs.send(
+        serviceId,
+        templateId,
+        templateParams,
+        publicKey
+      )
+
+      setIsSubmitting(false)
+      setSubmitStatus('success')
+      
+      // Reset form after 3 seconds
+      setTimeout(() => {
+        setSubmitStatus('idle')
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          phone: '',
+          service: '',
+          subject: '',
+          message: ''
+        })
+      }, 3000)
+    } catch (error) {
+      console.error('EmailJS Error:', error)
+      setIsSubmitting(false)
+      setSubmitStatus('error')
+      setErrorMessage(
+        error instanceof Error 
+          ? error.message 
+          : 'Failed to send message. Please try again or contact us directly at info@harikoa.com'
+      )
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -67,7 +111,7 @@ export function ContactForm() {
               Send Us a <span className="text-gradient">Message</span>
             </h2>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-secondary-600 text-balance font-roboto">
-              Fill out the form below and we&apos;ll get back to you within 24 hours.
+              Fill out the form below and we&apos;ll get back to you soon.
             </p>
           </div>
 
@@ -85,8 +129,30 @@ export function ContactForm() {
                   Message Sent Successfully!
                 </h3>
                 <p className="text-sm sm:text-base text-secondary-600 font-roboto">
-                  Thank you for reaching out. We&apos;ll get back to you within 24 hours.
+                  Thank you for reaching out. We&apos;ll get back to you soon.
                 </p>
+              </motion.div>
+            ) : submitStatus === 'error' ? (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="text-center py-8 sm:py-10 md:py-12"
+              >
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                  <AlertCircle className="w-6 h-6 sm:w-8 sm:h-8 text-red-600" />
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-secondary-900 mb-3 sm:mb-4 font-montserrat">
+                  Failed to Send Message
+                </h3>
+                <p className="text-sm sm:text-base text-secondary-600 font-roboto mb-4">
+                  {errorMessage}
+                </p>
+                <button
+                  onClick={() => setSubmitStatus('idle')}
+                  className="btn-primary text-sm sm:text-base px-6 sm:px-8 py-2 sm:py-3"
+                >
+                  Try Again
+                </button>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5 md:space-y-6">

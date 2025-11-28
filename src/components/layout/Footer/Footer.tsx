@@ -33,15 +33,18 @@ export function Footer() {
             <div className="space-y-2 sm:space-y-3">
               <div className="flex items-center space-x-2 sm:space-x-3 text-sm sm:text-base text-secondary-300">
                 <Mail className="w-4 h-4 flex-shrink-0" />
-                <span className="break-all">info@harikoa.com</span>
+                <span className="break-all">hello@harikoa.in</span>
               </div>
               <div className="flex items-center space-x-2 sm:space-x-3 text-sm sm:text-base text-secondary-300">
                 <Phone className="w-4 h-4 flex-shrink-0" />
-                <span>+91-XXXX-XXX-XXX</span>
+                <span>88845 00434 / 9742402302</span>
               </div>
-              <div className="flex items-center space-x-2 sm:space-x-3 text-sm sm:text-base text-secondary-300">
-                <MapPin className="w-4 h-4 flex-shrink-0" />
-                <span>(Add office address)</span>
+              <div className="flex items-start space-x-2 sm:space-x-3 text-sm sm:text-base text-secondary-300">
+                <MapPin className="w-4 h-4 flex-shrink-0 mt-0.5" />
+                <div className="flex flex-col space-y-1">
+                  <span>Mumbai: 403, Surya Towers, Near Hyde Park Chitalsar, Manpada Thane West 400607</span>
+                  <span>Bangalore: Indiqube -Omega - Maruthi Emerald ITPL Main Road, Bangalore 560037</span>
+                </div>
               </div>
             </div>
           </div>
