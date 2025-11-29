@@ -6,35 +6,15 @@ import { usePathname } from 'next/navigation'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/lib/utils'
-
-const navigation = [
-  { name: 'Home', href: '/' },
-  { name: 'Team', href: '/#team' },
-  { 
-    name: 'Services', 
-    href: '/services',
-    children: [
-      { name: 'Finance Operations', href: '/services?service=finance-operations' },
-      { name: 'Revenue Operations', href: '/services?service=revenue-operations' },
-      { name: 'Startup CFO Services', href: '/services?service=startup-cfo' },
-      { name: 'Legal Services', href: '/services?service=legal-services' },
-      { name: 'Company Secretarial', href: '/services?service=company-secretarial' },
-      { name: 'Financial Advisory Services', href: '/services?service=financial-advisory' },
-      { name: 'Taxation Services', href: '/services?service=taxation-services' },
-      { name: 'Business Analytics', href: '/services?service=business-analytics' },
-      { name: 'Not for Profit Services', href: '/services?service=not-for-profit' },
-    ]
-  },
-  { name: 'Careers', href: '/careers' },
-  { name: 'Contact', href: '/contact' },
-]
+import { navigation } from './navigationData'
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const pathname = usePathname()
-  const dropdownRef = useRef<HTMLDivElement>(null)
+  const dropdownRefs = useRef<{ [key: string]: HTMLDivElement | null }>({})
+  const isTogglingRef = useRef(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,23 +24,48 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const handleDropdownToggle = (e: React.MouseEvent, itemName: string) => {
+    e.stopPropagation()
+    isTogglingRef.current = true
+    setActiveDropdown(prev => prev === itemName ? null : itemName)
+    // Reset flag after toggle completes
+    setTimeout(() => {
+      isTogglingRef.current = false
+    }, 0)
+  }
+
   // Close dropdown when clicking outside
   useEffect(() => {
+    if (!activeDropdown) return
+
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setActiveDropdown(null)
+      // If we just toggled, ignore this click
+      if (isTogglingRef.current) {
+        return
       }
+
+      const target = event.target as HTMLElement
+      const activeRef = dropdownRefs.current[activeDropdown]
+      
+      // Check if click is inside the active dropdown container (button + menu)
+      if (activeRef?.contains(target)) {
+        return
+      }
+      
+      // Close if clicking outside
+      setActiveDropdown(null)
     }
 
-    document.addEventListener('mousedown', handleClickOutside)
+    // Listen for clicks after a short delay to allow button click to complete
+    const timeoutId = setTimeout(() => {
+      document.addEventListener('click', handleClickOutside)
+    }, 0)
+
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
+      clearTimeout(timeoutId)
+      document.removeEventListener('click', handleClickOutside)
     }
-  }, [])
-
-  const handleDropdownToggle = (itemName: string) => {
-    setActiveDropdown(activeDropdown === itemName ? null : itemName)
-  }
+  }, [activeDropdown])
 
   return (
     <header
@@ -89,13 +94,23 @@ export function Header() {
             {navigation.map((item) => (
               <div key={item.name} className="relative">
                 {item.children ? (
-                  <div className="relative" ref={dropdownRef}>
+                  <div 
+                    className="relative" 
+                    ref={(el) => {
+                      dropdownRefs.current[item.name] = el
+                    }}
+                  >
                     <button
-                      onClick={() => handleDropdownToggle(item.name)}
+                      onClick={(e) => handleDropdownToggle(e, item.name)}
                       className="flex items-center space-x-1 text-secondary-700 hover:text-primary-600 transition-colors duration-200"
                     >
                       <span>{item.name}</span>
-                      <ChevronDown className="w-4 h-4" />
+                      <ChevronDown 
+                        className={cn(
+                          "w-4 h-4 transition-transform duration-200",
+                          activeDropdown === item.name && "rotate-180"
+                        )} 
+                      />
                     </button>
                     <AnimatePresence>
                       {activeDropdown === item.name && (
@@ -103,7 +118,7 @@ export function Header() {
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: 10 }}
-                          className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-large border border-secondary-200 py-2"
+                          className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-large border border-secondary-200 py-2 z-50"
                         >
                           {item.children.map((child) => (
                             <Link
@@ -159,11 +174,16 @@ export function Header() {
                     {item.children ? (
                       <div>
                         <button
-                          onClick={() => handleDropdownToggle(item.name)}
+                          onClick={(e) => handleDropdownToggle(e, item.name)}
                           className="flex items-center justify-between w-full px-4 py-2 text-secondary-700 hover:text-primary-600 transition-colors duration-200"
                         >
                           <span>{item.name}</span>
-                          <ChevronDown className="w-4 h-4" />
+                          <ChevronDown 
+                            className={cn(
+                              "w-4 h-4 transition-transform duration-200",
+                              activeDropdown === item.name && "rotate-180"
+                            )} 
+                          />
                         </button>
                         <AnimatePresence>
                           {activeDropdown === item.name && (
@@ -212,3 +232,4 @@ export function Header() {
     </header>
   )
 }
+
