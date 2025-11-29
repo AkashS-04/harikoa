@@ -2,10 +2,11 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
-import { useRef, useState } from 'react'
-import { Send, CheckCircle, AlertCircle } from 'lucide-react'
+import { useRef, useState, useEffect } from 'react'
+import { Send, CheckCircle, AlertCircle, Clock } from 'lucide-react'
 import emailjs from '@emailjs/browser'
 import { services } from './contactFormData'
+import { checkRateLimit, getRateLimitStatus, RATE_LIMIT_CONFIGS } from '@/utils/rateLimiter'
 
 export function ContactForm() {
   const ref = useRef(null)
@@ -22,6 +23,7 @@ export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
+  const [rateLimitStatus, setRateLimitStatus] = useState(getRateLimitStatus(RATE_LIMIT_CONFIGS.CONTACT_FORM))
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -30,6 +32,16 @@ export function ContactForm() {
     setErrorMessage('')
 
     try {
+      // Check rate limit before proceeding
+      const rateLimitCheck = checkRateLimit(RATE_LIMIT_CONFIGS.CONTACT_FORM)
+      if (!rateLimitCheck.allowed) {
+        setRateLimitStatus(getRateLimitStatus(RATE_LIMIT_CONFIGS.CONTACT_FORM))
+        throw new Error(rateLimitCheck.message)
+      }
+
+      // Update rate limit status
+      setRateLimitStatus(getRateLimitStatus(RATE_LIMIT_CONFIGS.CONTACT_FORM))
+
       // Validate environment variables
       const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
       const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_CONTACT
@@ -65,6 +77,9 @@ export function ContactForm() {
       setIsSubmitting(false)
       setSubmitStatus('success')
       
+      // Update rate limit status after successful submission
+      setRateLimitStatus(getRateLimitStatus(RATE_LIMIT_CONFIGS.CONTACT_FORM))
+      
       // Reset form after 3 seconds
       setTimeout(() => {
         setSubmitStatus('idle')
@@ -87,8 +102,19 @@ export function ContactForm() {
           ? error.message 
           : 'Failed to send message. Please try again or contact us directly at info@harikoa.com'
       )
+      // Update rate limit status on error
+      setRateLimitStatus(getRateLimitStatus(RATE_LIMIT_CONFIGS.CONTACT_FORM))
     }
   }
+
+  // Update rate limit status periodically
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRateLimitStatus(getRateLimitStatus(RATE_LIMIT_CONFIGS.CONTACT_FORM))
+    }, 60000) // Update every minute
+
+    return () => clearInterval(interval)
+  }, [])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData(prev => ({
@@ -276,17 +302,32 @@ export function ContactForm() {
                   />
                 </div>
 
+                {/* Rate Limit Indicator */}
+                {rateLimitStatus.remaining < 3 && rateLimitStatus.remaining > 0 && (
+                  <div className="flex items-center justify-center gap-2 text-xs sm:text-sm text-amber-600 bg-amber-50 p-2 sm:p-3 rounded-lg border border-amber-200">
+                    <Clock className="w-4 h-4" />
+                    <span className="font-roboto">
+                      {rateLimitStatus.remaining} submission{rateLimitStatus.remaining !== 1 ? 's' : ''} remaining this hour
+                    </span>
+                  </div>
+                )}
+
                 {/* Submit Button */}
                 <div className="text-center pt-2">
                   <button
                     type="submit"
-                    disabled={isSubmitting}
+                    disabled={isSubmitting || rateLimitStatus.remaining === 0}
                     className="btn-primary text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 disabled:opacity-50 disabled:cursor-not-allowed w-full sm:w-auto"
                   >
                     {isSubmitting ? (
                       <div className="flex items-center justify-center">
                         <div className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
                         <span>Sending...</span>
+                      </div>
+                    ) : rateLimitStatus.remaining === 0 ? (
+                      <div className="flex items-center justify-center">
+                        <Clock className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                        <span>Rate Limit Reached</span>
                       </div>
                     ) : (
                       <div className="flex items-center justify-center">

@@ -1,10 +1,11 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { CheckCircle, AlertCircle, Upload, X } from 'lucide-react'
+import { CheckCircle, AlertCircle, Upload, X, Clock } from 'lucide-react'
 import emailjs from '@emailjs/browser'
 import { uploadFile } from '@uploadcare/upload-client'
+import { checkRateLimit, getRateLimitStatus, RATE_LIMIT_CONFIGS } from '@/utils/rateLimiter'
 
 export default function CareersPage() {
   const [formData, setFormData] = useState({
@@ -19,6 +20,7 @@ export default function CareersPage() {
   const [uploadProgress, setUploadProgress] = useState(0)
   const [resumeFileName, setResumeFileName] = useState('')
   const [isUploading, setIsUploading] = useState(false)
+  const [rateLimitStatus, setRateLimitStatus] = useState(getRateLimitStatus(RATE_LIMIT_CONFIGS.CAREERS_FORM))
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
@@ -46,6 +48,15 @@ export default function CareersPage() {
     }
   }
 
+  // Update rate limit status periodically
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRateLimitStatus(getRateLimitStatus(RATE_LIMIT_CONFIGS.CAREERS_FORM))
+    }, 60000) // Update every minute
+
+    return () => clearInterval(interval)
+  }, [])
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
@@ -53,6 +64,16 @@ export default function CareersPage() {
     setErrorMessage('')
 
     try {
+      // Check rate limit before proceeding
+      const rateLimitCheck = checkRateLimit(RATE_LIMIT_CONFIGS.CAREERS_FORM)
+      if (!rateLimitCheck.allowed) {
+        setRateLimitStatus(getRateLimitStatus(RATE_LIMIT_CONFIGS.CAREERS_FORM))
+        throw new Error(rateLimitCheck.message)
+      }
+
+      // Update rate limit status
+      setRateLimitStatus(getRateLimitStatus(RATE_LIMIT_CONFIGS.CAREERS_FORM))
+
       // Validate environment variables
       const uploadcareKey = process.env.NEXT_PUBLIC_UPLOADCARE_PUBLIC_KEY
       const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
@@ -152,6 +173,9 @@ export default function CareersPage() {
 
       setIsSubmitting(false)
       setSubmitStatus('success')
+      
+      // Update rate limit status after successful submission
+      setRateLimitStatus(getRateLimitStatus(RATE_LIMIT_CONFIGS.CAREERS_FORM))
     } catch (error) {
       console.error('Submission Error:', error)
       setIsSubmitting(false)
@@ -163,6 +187,8 @@ export default function CareersPage() {
           ? error.message 
           : 'Failed to submit application. Please try again or contact us directly at careers@harikoa.com'
       )
+      // Update rate limit status on error
+      setRateLimitStatus(getRateLimitStatus(RATE_LIMIT_CONFIGS.CAREERS_FORM))
     }
   }
 
@@ -354,16 +380,31 @@ export default function CareersPage() {
                     )}
                   </div>
 
+                  {/* Rate Limit Indicator */}
+                  {rateLimitStatus.remaining < 2 && rateLimitStatus.remaining > 0 && (
+                    <div className="flex items-center justify-center gap-2 text-xs sm:text-sm text-amber-600 bg-amber-50 p-2 sm:p-3 rounded-lg border border-amber-200">
+                      <Clock className="w-4 h-4" />
+                      <span className="font-roboto">
+                        {rateLimitStatus.remaining} submission{rateLimitStatus.remaining !== 1 ? 's' : ''} remaining this hour
+                      </span>
+                    </div>
+                  )}
+
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    disabled={isSubmitting || isUploading}
+                    disabled={isSubmitting || isUploading || rateLimitStatus.remaining === 0}
                     className="w-full bg-primary-600 text-white py-2.5 sm:py-3 px-6 rounded-lg text-sm sm:text-base font-semibold hover:bg-primary-700 transition-colors duration-200 font-roboto disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting || isUploading ? (
                       <div className="flex items-center justify-center">
                         <div className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
                         <span>{isUploading ? 'Uploading Resume...' : 'Submitting...'}</span>
+                      </div>
+                    ) : rateLimitStatus.remaining === 0 ? (
+                      <div className="flex items-center justify-center">
+                        <Clock className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                        <span>Rate Limit Reached</span>
                       </div>
                     ) : (
                       'SUBMIT'

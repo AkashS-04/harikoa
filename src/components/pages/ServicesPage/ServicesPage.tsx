@@ -3,16 +3,12 @@
 import { useState, useEffect } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
-import { useRef } from 'react'
 import { services } from './servicesData'
 
 export function ServicesPageContent() {
   const [activeService, setActiveService] = useState(services[0])
   const router = useRouter()
   const searchParams = useSearchParams()
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   // Handle URL changes and set active service
   useEffect(() => {
@@ -32,16 +28,15 @@ export function ServicesPageContent() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-accent-50 pt-20 sm:pt-24">
-      <div className="flex flex-col lg:flex-row min-h-[calc(100vh-5rem)]">
+      <div className="flex flex-col lg:flex-row">
         {/* Left Column - Service Content */}
-        <div className="flex-1 bg-white lg:bg-transparent overflow-y-auto">
+        <div className="flex-1 bg-white lg:bg-transparent">
           <div className="max-w-4xl mx-auto p-6 sm:p-8 lg:p-12">
             <motion.div
               key={activeService.id}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              ref={ref}
             >
               {/* Service Header */}
               <div className="mb-6 sm:mb-8">
@@ -70,8 +65,8 @@ export function ServicesPageContent() {
                     <motion.div
                       key={index}
                       initial={{ opacity: 0, y: 10 }}
-                      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-                      transition={{ duration: 0.4, delay: index * 0.1 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4, delay: index * 0.05 }}
                       className="flex items-start space-x-3 bg-white rounded-lg p-4 sm:p-5 shadow-sm border border-primary-100 hover:shadow-md transition-shadow duration-300"
                     >
                       <div className="w-2 h-2 bg-primary-600 rounded-full flex-shrink-0 mt-2"></div>
@@ -87,12 +82,12 @@ export function ServicesPageContent() {
         </div>
 
         {/* Right Column - Services List */}
-        <div className="w-full lg:w-80 xl:w-96 bg-primary-950 text-white lg:sticky lg:top-20 lg:h-[calc(100vh-5rem)] flex-shrink-0">
-          <div className="p-4 sm:p-6 h-full flex flex-col">
+        <div className="w-full lg:w-80 xl:w-96 bg-primary-950 text-white lg:sticky lg:top-20 lg:self-start flex-shrink-0">
+          <div className="p-4 sm:p-6 flex flex-col">
             <h3 className="text-base sm:text-lg font-bold mb-4 sm:mb-6 text-center uppercase tracking-wide text-white font-montserrat px-2">
               SERVICES
             </h3>
-            <nav className="space-y-1.5 sm:space-y-2 flex-1 overflow-y-auto pr-2">
+            <nav className="space-y-1.5 sm:space-y-2">
               {services.map((service) => (
                 <button
                   key={service.id}

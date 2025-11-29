@@ -18,6 +18,10 @@ export const footerLinks = {
     { name: 'Startup CFO Services', href: '/services?service=startup-cfo' },
     { name: 'Legal Services', href: '/services?service=legal-services' },
     { name: 'Company Secretarial', href: '/services?service=company-secretarial' },
+    { name: 'Financial Advisory Services', href: '/services?service=financial-advisory' },
+    { name: 'Business Analytics Services', href: '/services?service=business-analytics' },
+    { name: 'Taxation Services', href: '/services?service=taxation-services' },
+    { name: 'Not for Profit Services', href: '/services?service=not-for-profit' },
   ],
   company: [
     { name: 'Careers', href: '/careers' },
