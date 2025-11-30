@@ -23,7 +23,15 @@ export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
-  const [rateLimitStatus, setRateLimitStatus] = useState(getRateLimitStatus(RATE_LIMIT_CONFIGS.CONTACT_FORM))
+  const [rateLimitStatus, setRateLimitStatus] = useState<{
+    remaining: number
+    resetTime: number | null
+    used: number
+  }>({
+    remaining: RATE_LIMIT_CONFIGS.CONTACT_FORM.maxSubmissions,
+    resetTime: null,
+    used: 0
+  })
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -107,8 +115,12 @@ export function ContactForm() {
     }
   }
 
-  // Update rate limit status periodically
+  // Initialize and update rate limit status (client-side only)
   useEffect(() => {
+    // Initialize on mount (client-side only)
+    setRateLimitStatus(getRateLimitStatus(RATE_LIMIT_CONFIGS.CONTACT_FORM))
+    
+    // Update periodically
     const interval = setInterval(() => {
       setRateLimitStatus(getRateLimitStatus(RATE_LIMIT_CONFIGS.CONTACT_FORM))
     }, 60000) // Update every minute
