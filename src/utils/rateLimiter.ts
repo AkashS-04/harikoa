@@ -15,6 +15,13 @@ interface SubmissionRecord {
 }
 
 /**
+ * Check if we're in a browser environment
+ */
+function isBrowser(): boolean {
+  return typeof window !== 'undefined' && typeof localStorage !== 'undefined'
+}
+
+/**
  * Check if a submission is allowed based on rate limits
  * @param config Rate limit configuration
  * @returns Object with allowed status and remaining submissions
@@ -25,6 +32,16 @@ export function checkRateLimit(config: RateLimitConfig): {
   resetTime: number | null
   message: string
 } {
+  // If not in browser, allow submission (SSR safe)
+  if (!isBrowser()) {
+    return {
+      allowed: true,
+      remaining: config.maxSubmissions,
+      resetTime: null,
+      message: ''
+    }
+  }
+
   const now = Date.now()
   const storageKey = config.storageKey
 
@@ -89,6 +106,15 @@ export function getRateLimitStatus(config: RateLimitConfig): {
   resetTime: number | null
   used: number
 } {
+  // If not in browser, return default values (SSR safe)
+  if (!isBrowser()) {
+    return {
+      remaining: config.maxSubmissions,
+      resetTime: null,
+      used: 0
+    }
+  }
+
   const now = Date.now()
   const storageKey = config.storageKey
 
@@ -128,6 +154,8 @@ export function getRateLimitStatus(config: RateLimitConfig): {
  * Clear rate limit records (useful for testing or manual reset)
  */
 export function clearRateLimit(storageKey: string): void {
+  if (!isBrowser()) return
+  
   try {
     localStorage.removeItem(storageKey)
   } catch (error) {

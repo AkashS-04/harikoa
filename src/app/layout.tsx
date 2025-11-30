@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { Suspense } from 'react'
 import './globals.css'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
@@ -88,7 +89,9 @@ export default function RootLayout({
     <html lang="en" className={inter.variable}>
       <body className={`${inter.className} antialiased`}>
         <div className="flex min-h-screen flex-col">
-          <Header />
+          <Suspense fallback={<div className="h-16 lg:h-20" />}>
+            <Header />
+          </Suspense>
           <main className="flex-1">
             {children}
           </main>

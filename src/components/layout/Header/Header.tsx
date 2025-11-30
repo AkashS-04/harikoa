@@ -12,9 +12,14 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
+  const [mounted, setMounted] = useState(false)
   const pathname = usePathname()
   const dropdownRefs = useRef<{ [key: string]: HTMLDivElement | null }>({})
   const isTogglingRef = useRef(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -139,7 +144,7 @@ export function Header() {
                     href={item.href}
                     className={cn(
                       'text-secondary-700 hover:text-primary-600 transition-colors duration-200',
-                      pathname === item.href && 'text-primary-600 font-medium'
+                      mounted && pathname === item.href && 'text-primary-600 font-medium'
                     )}
                   >
                     {item.name}
@@ -215,7 +220,7 @@ export function Header() {
                         href={item.href}
                         className={cn(
                           'block px-4 py-2 text-secondary-700 hover:text-primary-600 transition-colors duration-200',
-                          pathname === item.href && 'text-primary-600 font-medium'
+                          mounted && pathname === item.href && 'text-primary-600 font-medium'
                         )}
                         onClick={() => setIsOpen(false)}
                       >

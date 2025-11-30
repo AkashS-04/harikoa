@@ -20,7 +20,15 @@ export default function CareersPage() {
   const [uploadProgress, setUploadProgress] = useState(0)
   const [resumeFileName, setResumeFileName] = useState('')
   const [isUploading, setIsUploading] = useState(false)
-  const [rateLimitStatus, setRateLimitStatus] = useState(getRateLimitStatus(RATE_LIMIT_CONFIGS.CAREERS_FORM))
+  const [rateLimitStatus, setRateLimitStatus] = useState<{
+    remaining: number
+    resetTime: number | null
+    used: number
+  }>({
+    remaining: RATE_LIMIT_CONFIGS.CAREERS_FORM.maxSubmissions,
+    resetTime: null,
+    used: 0
+  })
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
@@ -48,8 +56,12 @@ export default function CareersPage() {
     }
   }
 
-  // Update rate limit status periodically
+  // Initialize and update rate limit status (client-side only)
   useEffect(() => {
+    // Initialize on mount (client-side only)
+    setRateLimitStatus(getRateLimitStatus(RATE_LIMIT_CONFIGS.CAREERS_FORM))
+    
+    // Update periodically
     const interval = setInterval(() => {
       setRateLimitStatus(getRateLimitStatus(RATE_LIMIT_CONFIGS.CAREERS_FORM))
     }, 60000) // Update every minute
