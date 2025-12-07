@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { CheckCircle, AlertCircle, Upload, X, Clock } from 'lucide-react'
+import { CheckCircle, AlertCircle, Upload, X, Clock, Briefcase, TrendingUp, Users } from 'lucide-react'
 import emailjs from '@emailjs/browser'
 import { uploadFile } from '@uploadcare/upload-client'
 import { checkRateLimit, getRateLimitStatus, RATE_LIMIT_CONFIGS } from '@/utils/rateLimiter'
@@ -222,21 +222,36 @@ export default function CareersPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-start">
             {/* Team Illustration */}
             <div className="flex justify-center lg:justify-end order-2 lg:order-1">
-              <div className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 bg-gradient-to-br from-primary-100 to-accent-100 rounded-full flex items-center justify-center">
-                <div className="w-36 h-36 sm:w-40 sm:h-40 md:w-48 md:h-48 relative">
-                  {/* Central figure */}
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-primary-600 rounded-full"></div>
-                  {/* Surrounding figures */}
-                  <div className="absolute top-2 sm:top-3 md:top-4 left-1/2 transform -translate-x-1/2 w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 bg-gray-600 rounded-full"></div>
-                  <div className="absolute top-4 sm:top-6 md:top-8 right-4 sm:right-6 md:right-8 w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 bg-gray-600 rounded-full"></div>
-                  <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 right-6 sm:right-8 md:right-12 w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 bg-gray-600 rounded-full"></div>
-                  <div className="absolute bottom-2 sm:bottom-3 md:bottom-4 left-1/2 transform -translate-x-1/2 w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 bg-gray-600 rounded-full"></div>
-                  <div className="absolute top-4 sm:top-6 md:top-8 left-4 sm:left-6 md:left-8 w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 bg-gray-600 rounded-full"></div>
-                  <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-6 sm:left-8 md:left-12 w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 bg-gray-600 rounded-full"></div>
+              <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64">
+                {/* Background gradient circle */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-100 to-accent-100 rounded-2xl sm:rounded-3xl shadow-lg"></div>
+                
+                {/* Professional icons illustration */}
+                <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-6">
+                  <div className="relative w-full h-full">
+                    {/* Central Briefcase icon */}
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                      <Briefcase className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 text-primary-600" strokeWidth={1.5} />
+                    </div>
+                    
+                    {/* Top TrendingUp icon */}
+                    <div className="absolute top-2 sm:top-3 md:top-4 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                      <TrendingUp className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 text-primary-500" strokeWidth={1.5} />
+                    </div>
+                    
+                    {/* Bottom left decorative element */}
+                    <div className="absolute bottom-6 sm:bottom-8 left-6 sm:left-8">
+                      <div className="w-3 h-3 sm:w-4 sm:h-4 bg-primary-400 rounded-full opacity-60"></div>
+                    </div>
+                    
+                    {/* Bottom right decorative element */}
+                    <div className="absolute bottom-4 sm:bottom-6 right-6 sm:right-8">
+                      <div className="w-2 h-2 sm:w-3 sm:h-3 bg-accent-400 rounded-full opacity-60"></div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-
             {/* Application Form */}
             <div className="bg-white rounded-xl sm:rounded-2xl shadow-soft p-6 sm:p-8 order-1 lg:order-2">
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-secondary-900 mb-4 sm:mb-6 font-montserrat">

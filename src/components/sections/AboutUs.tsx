@@ -56,11 +56,7 @@ export function AboutUs() {
                 className="pt-4 sm:pt-6"
               >
                 <button 
-                  onClick={() => {
-                    document.getElementById('services-section')?.scrollIntoView({ 
-                      behavior: 'smooth' 
-                    })
-                  }}
+                  onClick={() => {window.location.href = '/team'}}
                   className="inline-flex items-center space-x-2 bg-primary-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg text-sm sm:text-base font-semibold hover:bg-primary-700 transition-colors duration-300 group w-full sm:w-auto justify-center"
                 >
                   <span>Learn More About Us</span>
@@ -75,7 +71,7 @@ export function AboutUs() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="relative order-1 lg:order-2 px-4 sm:px-0"
             >
-              <div className="bg-gradient-to-br from-primary-100 to-accent-100 rounded-xl sm:rounded-2xl p-6 sm:p-8 h-64 sm:h-80 md:h-96 flex items-center justify-center">
+              <div className="bg-gradient-to-br from-blue-50 via-indigo-50 to-cyan-50 rounded-xl sm:rounded-2xl p-6 sm:p-8 h-64 sm:h-80 md:h-96 flex items-center justify-center">
                 <div className="text-center">
                   <div className="flex items-center justify-center">
                     <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-950 font-montserrat">har</span>
@@ -84,7 +80,7 @@ export function AboutUs() {
                   </div>
                   <div className="w-16 sm:w-20 md:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-primary-500 via-accent-500 to-primary-800 mx-auto mt-1 sm:mt-2"></div>
                   <p className="text-sm sm:text-base md:text-lg font-bold text-accent-950 font-montserrat mb-2 sm:mb-3 mt-1 sm:mt-2">consulting</p>
-                  <p className="text-xs sm:text-sm md:text-base lg:text-lg text-secondary-600 font-roboto ml-1 sm:ml-2">Financial Solutions & Business Growth</p>
+                  <p className="text-xs sm:text-sm md:text-base lg:text-lg text-secondary-600 font-roboto ml-1 sm:ml-2">Building a business that is fulfilling and joyful</p>
                 </div>
               </div>
             </motion.div>

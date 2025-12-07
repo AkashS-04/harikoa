@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import Image from 'next/image'
 import { teamMembers } from './teamMembersData'
 
 export function TeamPartners() {
@@ -133,12 +134,36 @@ export function TeamPartners() {
                   transition={{ duration: 0.5 }}
                   className="relative"
                 >
-                  <div className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 bg-gradient-to-br from-primary-600 to-accent-600 rounded-full flex items-center justify-center shadow-xl">
-                    <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 bg-white rounded-full flex items-center justify-center">
-                      <span className="text-2xl sm:text-2xl md:text-3xl font-bold text-primary-950 font-montserrat">
-                        {teamMembers[currentIndex].name.charAt(0)}
-                      </span>
-                    </div>
+                  <div className="w-36 h-36 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 bg-gradient-to-br from-primary-600 to-accent-600 rounded-full flex items-center justify-center shadow-xl overflow-hidden relative p-0.5">
+                    {teamMembers[currentIndex].image && teamMembers[currentIndex].image !== '/api/placeholder/300/300' ? (
+                      <div className="w-full h-full rounded-full overflow-hidden bg-white relative">
+                        <Image
+                          src={teamMembers[currentIndex].image}
+                          alt={teamMembers[currentIndex].name}
+                          fill
+                          className="object-cover object-center rounded-full"
+                          style={{ objectPosition: 'center center' }}
+                          onError={(e) => {
+                            // Fallback to initial if image fails to load
+                            const target = e.target as HTMLImageElement
+                            target.style.display = 'none'
+                            const parent = target.parentElement
+                            if (parent) {
+                              const fallback = document.createElement('div')
+                              fallback.className = 'w-full h-full bg-white rounded-full flex items-center justify-center absolute inset-0'
+                              fallback.innerHTML = `<span class="text-2xl sm:text-2xl md:text-3xl font-bold text-primary-950 font-montserrat">${teamMembers[currentIndex].name.charAt(0)}</span>`
+                              parent.appendChild(fallback)
+                            }
+                          }}
+                        />
+                      </div>
+                    ) : (
+                      <div className="w-full h-full bg-white rounded-full flex items-center justify-center">
+                        <span className="text-2xl sm:text-2xl md:text-3xl font-bold text-primary-950 font-montserrat">
+                          {teamMembers[currentIndex].name.charAt(0)}
+                        </span>
+                      </div>
+                    )}
                   </div>
                   
                   {/* Floating elements */}
