@@ -173,7 +173,7 @@ export default function CareersPage() {
         mobile: formData.mobile,
         resume_url: fileUrl,
         // Optional: Uncomment and set if you want to use dynamic recipient in template
-        // to_email: process.env.NEXT_PUBLIC_CAREERS_EMAIL || 'careers@harikoa.com',
+        // to_email: process.env.NEXT_PUBLIC_CAREERS_EMAIL || 'careers@harikoa.in',
       }
 
       await emailjs.send(
@@ -197,7 +197,7 @@ export default function CareersPage() {
       setErrorMessage(
         error instanceof Error 
           ? error.message 
-          : 'Failed to submit application. Please try again or contact us directly at careers@harikoa.com'
+          : 'Failed to submit application. Please try again or contact us directly at careers@harikoa.in'
       )
       // Update rate limit status on error
       setRateLimitStatus(getRateLimitStatus(RATE_LIMIT_CONFIGS.CAREERS_FORM))
