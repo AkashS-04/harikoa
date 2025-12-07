@@ -1,0 +1,2 @@
+export { TeamPageContent } from './TeamPage'
+

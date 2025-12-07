@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { features } from './welcomeData'
 
 export function Welcome() {
   const ref = useRef(null)
@@ -29,57 +28,81 @@ export function Welcome() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-secondary-900 mb-6 sm:mb-8 md:mb-12 font-montserrat px-2"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-secondary-900 mb-8 sm:mb-10 md:mb-14 lg:mb-16 font-montserrat px-2"
           >
-            Welcome to the world of <span className="text-gradient">Harikoa</span>
+            Welcome to <span className="text-gradient">Harikoa</span>
           </motion.h1>
           
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="space-y-4 sm:space-y-6 text-base sm:text-lg md:text-xl text-secondary-600 max-w-4xl mx-auto mb-8 sm:mb-12 font-roboto px-4"
+            className="text-base sm:text-lg md:text-xl text-secondary-600 max-w-4xl mx-auto mb-12 sm:mb-16 md:mb-20 font-roboto px-4"
           >
-            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-secondary-800 leading-tight">
-              We&apos;re here to bring structure to your numbers, strength to your strategy, and peace of mind to your journey— so you can build a business that&apos;s both fulfilling and joyful.
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium text-secondary-800 leading-relaxed">
+              At Harikoa, we bring <span className="text-primary-600 underline">structure </span>to your numbers, <span className="text-primary-600 underline">strength </span>to your strategy, and <span className="text-primary-600 underline">peace of mind </span>to your journey— so you can build a business that&apos;s both <span className="text-primary-600 underline">fulfilling and joyful</span>.
             </p>
-            
-            <p className="text-sm sm:text-base md:text-lg text-secondary-600">
-              Partner with us today and experience personalized financial solutions that propel your success forward.
-            </p>
-          </motion.div>
-
-          {/* Feature Pills */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
-            className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 mb-8 sm:mb-12 px-4"
-          >
-            {features.map((feature, index) => (
-              <motion.div
-                key={feature.text}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
-                className="flex items-center space-x-1.5 sm:space-x-2 bg-white/80 backdrop-blur-sm border border-primary-200 rounded-full px-3 py-1.5 sm:px-4 sm:py-2 shadow-soft hover:shadow-medium transition-all duration-300"
-              >
-                <feature.icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary-600 flex-shrink-0" />
-                <span className="text-xs sm:text-sm font-medium text-secondary-700 whitespace-nowrap">{feature.text}</span>
-              </motion.div>
-            ))}
           </motion.div>
 
           {/* Metrics */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.6, delay: 1.0 }}
-            className="max-w-4xl mx-auto px-4"
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="max-w-6xl mx-auto px-4"
           >
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-secondary-700 font-roboto leading-relaxed">
-              70+ Person Years of Experience | 200+ Clients | 1 Belief — Business Should Feel Joyful
-            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+              {/* Card 1 */}
+              <motion.div
+                whileHover={{ scale: 1.05, y: -5 }}
+                transition={{ duration: 0.3 }}
+                className="group relative bg-white/80 backdrop-blur-sm rounded-xl p-6 sm:p-8 border border-primary-200/50 shadow-sm hover:shadow-lg transition-all duration-300"
+              >
+                <div className="text-center">
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary-700 mb-2">
+                    70+
+                  </div>
+                  <div className="text-sm sm:text-base md:text-lg text-secondary-700 font-extrabold">
+                    Years of Experience
+                  </div>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-50/0 to-primary-100/0 rounded-xl transition-all duration-300 pointer-events-none"></div>
+              </motion.div>
+
+              {/* Card 2 */}
+              <motion.div
+                whileHover={{ scale: 1.05, y: -5 }}
+                transition={{ duration: 0.3 }}
+                className="group relative bg-white/80 backdrop-blur-sm rounded-xl p-6 sm:p-8 border border-accent-200/50 shadow-sm hover:shadow-lg transition-all duration-300"
+              >
+                <div className="text-center">
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary-700 mb-2">
+                    200+
+                  </div>
+                  <div className="text-sm sm:text-base md:text-lg text-secondary-700 font-extrabold">
+                    Clients
+                  </div>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-br from-accent-50/0 to-accent-100/0 rounded-xl transition-all duration-300 pointer-events-none"></div>
+              </motion.div>
+
+              {/* Card 3 */}
+              <motion.div
+                whileHover={{ scale: 1.05, y: -5 }}
+                transition={{ duration: 0.3 }}
+                className="group relative bg-white/80 backdrop-blur-sm rounded-xl p-6 sm:p-8 border border-primary-200/50 shadow-sm hover:shadow-lg transition-all duration-300"
+              >
+                <div className="text-center">
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary-700 mb-2">
+                    1
+                  </div>
+                  <div className="text-sm sm:text-base md:text-lg text-secondary-700 font-extrabold">
+                    Belief — <span className="text-secondary-700 font-extrabold">Business that is Fulfilling and Joyful</span>
+                  </div>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-50/0 to-accent-50/0 rounded-xl transition-all duration-300 pointer-events-none"></div>
+              </motion.div>
+            </div>
           </motion.div>
         </motion.div>
       </div>

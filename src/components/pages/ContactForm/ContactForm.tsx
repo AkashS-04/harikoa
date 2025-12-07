@@ -71,7 +71,7 @@ export function ContactForm() {
         subject: formData.subject,
         message: formData.message,
         // Optional: Uncomment and set if you want to use dynamic recipient in template
-        // to_email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'info@harikoa.com',
+        // to_email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'info@harikoa.in',
       }
 
       // Send email via EmailJS
@@ -108,7 +108,7 @@ export function ContactForm() {
       setErrorMessage(
         error instanceof Error 
           ? error.message 
-          : 'Failed to send message. Please try again or contact us directly at info@harikoa.com'
+          : 'Failed to send message. Please try again or contact us directly at info@harikoa.in'
       )
       // Update rate limit status on error
       setRateLimitStatus(getRateLimitStatus(RATE_LIMIT_CONFIGS.CONTACT_FORM))

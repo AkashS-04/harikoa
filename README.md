@@ -1,6 +1,6 @@
 # Harikoa - Corporate Website
 
-A modern, professional corporate website built with Next.js 14, TypeScript, and Tailwind CSS. This project showcases a technology consulting firm with a clean, minimalistic design inspired by high-end corporate websites.
+A modern, professional corporate website built with Next.js 15, TypeScript, and Tailwind CSS. This project showcases a financial services firm with a clean, minimalistic design inspired by high-end corporate websites.
 
 ## 🚀 Features
 
@@ -15,7 +15,7 @@ A modern, professional corporate website built with Next.js 14, TypeScript, and 
 
 ## 🛠️ Tech Stack
 
-- **Framework**: Next.js 14 with App Router
+- **Framework**: Next.js 15 with App Router
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS with custom design system
 - **Animations**: Framer Motion
@@ -28,18 +28,19 @@ A modern, professional corporate website built with Next.js 14, TypeScript, and 
 ```
 src/
 ├── app/                    # Next.js App Router pages
-│   ├── about/             # About page
+│   ├── team/              # Team page
 │   ├── services/          # Services page
-│   ├── sectors/           # Industries page
 │   ├── careers/           # Careers page
 │   ├── contact/           # Contact page
 │   ├── globals.css        # Global styles
 │   ├── layout.tsx         # Root layout
+│   ├── sitemap.ts         # Sitemap generation
 │   └── page.tsx           # Home page
 ├── components/            # Reusable components
 │   ├── layout/           # Layout components (Header, Footer)
 │   ├── pages/            # Page-specific components
-│   └── sections/         # Section components
+│   ├── sections/         # Section components
+│   └── seo/              # SEO components (Structured Data)
 ├── lib/                   # Utility functions
 ├── types/                 # TypeScript type definitions
 └── ...
@@ -58,11 +59,10 @@ The project uses a comprehensive design system with:
 ## 📱 Pages
 
 1. **Home**: Hero section, services highlights, company stats, partners
-2. **About**: Company mission, vision, values, team, and history
-3. **Services**: Comprehensive technology services with detailed descriptions
-4. **Sectors**: Industry-specific solutions and expertise
-5. **Careers**: Job listings, company culture, and benefits
-6. **Contact**: Contact form, company information, and location
+2. **Team**: Meet our experienced team of financial experts and advisors
+3. **Services**: Comprehensive financial services including Finance Operations, Revenue Operations, Startup CFO Services, Legal Services, and Company Secretarial
+4. **Careers**: Join our team - opportunities for financial professionals
+5. **Contact**: Contact form, company information, and location
 
 ## 🚀 Getting Started
 
@@ -88,7 +88,7 @@ The project uses a comprehensive design system with:
 ## 🎯 Key Features
 
 ### Performance
-- Next.js 14 App Router for optimal performance
+- Next.js 15 App Router for optimal performance
 - Image optimization with Next.js Image component
 - Code splitting and lazy loading
 - Optimized bundle size
@@ -149,7 +149,7 @@ This project is licensed under the MIT License.
 
 ## 📞 Support
 
-For support or questions, please contact us at hello@harikoa.com
+For support or questions, please contact us at hello@harikoa.in
 
 ---
 
