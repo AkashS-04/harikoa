@@ -40,7 +40,7 @@ export function Welcome() {
             className="text-base sm:text-lg md:text-xl text-secondary-600 max-w-4xl mx-auto mb-12 sm:mb-16 md:mb-20 font-roboto px-4"
           >
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium text-secondary-800 leading-relaxed">
-              At Harikoa, we bring <span className="text-primary-600 underline">structure </span>to your numbers, <span className="text-primary-600 underline">strength </span>to your strategy, and <span className="text-primary-600 underline">peace of mind </span>to your journey— so you can build a business that&apos;s both <span className="text-primary-600 underline">fulfilling and joyful</span>.
+              At Harikoa, we bring structure to your numbers, strength to your strategy, and peace of mind to your journey— so you can build a business that&apos;s both fulfilling and joyful.
             </p>
           </motion.div>
 

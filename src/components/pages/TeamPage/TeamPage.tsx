@@ -70,7 +70,7 @@ export function TeamPageContent() {
                 <div className={`w-full md:w-2/3 lg:w-3/5 flex-1 ${isEven ? 'order-1 md:order-2' : 'order-1 md:order-1'}`}>
                   <div className="space-y-3 sm:space-y-4 md:space-y-5">
                     {/* Name */}
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-secondary-900 font-montserrat leading-tight">
+                    <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-secondary-900 font-montserrat leading-tight">
                       {member.name}
                     </h2>
 
@@ -78,14 +78,6 @@ export function TeamPageContent() {
                     <p className="text-sm sm:text-base md:text-lg lg:text-xl text-secondary-700 font-roboto">
                       {member.qualifications}
                     </p>
-
-                    {/* Title with underline */}
-                    <div>
-                      <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-primary-950 font-montserrat mb-2">
-                        {member.title}
-                      </p>
-                      <div className="w-12 sm:w-16 h-0.5 bg-primary-600"></div>
-                    </div>
 
                     {/* Description */}
                     <div className="space-y-3 sm:space-y-4 pt-2">
